@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Link from  'next/link'
+import { HomePage } from '../src/components/home/HomePage'
+import { Footer } from '../src/components/footer/Footer'
+import { Header } from '../src/components/header/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,20 +19,10 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <nav>  
-          <img />
-          <Link href='/'>Home</Link>
-          <Link href='/products'>Products</Link>
-          <Link href='/about-us'>About Us</Link>
-        </nav>
-      </header>
-      <main className={styles.main}>
-        {data.map((pr) => ( <Link key={pr.id} href={`/products/${pr.id}`}> <Image alt={pr.title} width={300} height={300} src={pr.image}/> <h2>{pr.title}</h2><p>{pr.description}</p> </Link>))}
-
-      </main>
-
-      <footer className={styles.footer}></footer>
+      <Header/>
+      <HomePage data={data}/>
+      <Footer/>
+    
     </>
   )
 }
