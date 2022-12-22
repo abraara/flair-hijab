@@ -3,46 +3,102 @@
         {
             "id": "clothing",
             "title": "Clothes",
-            "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/clothes.jpg"
+            "description": "The best clothes in Flair Hijab",
+            "image": "/products/clothes.jpg"
         },
         {
             "id": "jewelry",
             "title": "Jewelry",
-            "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/jewelry.jpg"
+            "description": "All the jewelry you need",
+            "image": "/products/jewelry.jpg"
         },
         {
             "id": "hijabs",
             "title": "Hijabs",
-            "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/hijabs.jpg"
+            "description": "Every colour hijab",
+            "image": "/products/hijabs.jpg"
         }
     ],
     "allProducts": [
         {
             "id": "clothing-shalwar-2pc",
             "category": "clothing",
-            "title": "2pc Shalwar",
+            "title": "2pc Shalwar Kameez",
             "price": "29.99",
-            "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/clothes.jpg"
+            "description": "2pc shalwar kameez",
+            "image": "/products/clothes.jpg"
         },
         {
-            "id": "jewelry-2pc-necklace",
+            "id": "clothing-shalwar-3pc",
+            "category": "clothing",
+            "title": "3pc Shalwar Kameez",
+            "price": "39.99",
+            "description": "3pc shalwar kameez",
+            "image": "/products/clothes.jpg"
+        },
+        {
+            "id": "clothing-kameez-1pc",
+            "category": "clothing",
+            "title": "1pc Kameez",
+            "price": "19.99",
+            "description": "1pc kameez",
+            "image": "/products/clothes.jpg"
+        },
+        {
+            "id": "jewelry-pakistani",
             "category": "jewelry",
-            "title": "2pc set necklace",
+            "title": "pakistani jewelry",
             "price": "29.99",
-            "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/jewelry.jpg"
+            "description": "pakistani",
+            "image": "/products/jewelry.jpg"
         },
         {
-            "id": "hijabs-scarf",
-            "category": "hijabs",
-            "title": "Hijab Scarf",
+            "id": "jewelry-indian",
+            "category": "jewelry",
+            "title": "indian jewelry",
             "price": "29.99",
-            "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/hijabs.jpg"
+            "description": "indian",
+            "image": "/products/jewelry.jpg"
+        },
+        {
+            "id": "jewelry-turkish",
+            "category": "jewelry",
+            "title": "turkish jewelry",
+            "price": "29.99",
+            "description": "turkish",
+            "image": "/products/jewelry.jpg"
+        },
+        {
+            "id": "hijabs-chiffon",
+            "category": "hijabs",
+            "title": "Chiffon Hijabs",
+            "price": "29.99",
+            "description": "Chiffon Hijabs",
+            "image": "/products/hijabs.jpg"
+        },
+        {
+            "id": "hijabs-jersey",
+            "category": "hijabs",
+            "title": "Jersey Hijabs",
+            "price": "29.99",
+            "description": "Jersey Hijabs",
+            "image": "/products/hijabs.jpg"
+        },
+        {
+            "id": "hijabs-cotton",
+            "category": "hijabs",
+            "title": "Cotton Hijabs",
+            "price": "29.99",
+            "description": "Cotton Hijabs",
+            "image": "/products/hijabs.jpg"
+        },
+        {
+            "id": "hijabs-accessories",
+            "category": "hijabs",
+            "title": "Hijab Accessories",
+            "price": "29.99",
+            "description": "Hijab Accessories",
+            "image": "/products/hijabs.jpg"
         }
     ]
 }
