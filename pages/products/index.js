@@ -1,10 +1,9 @@
-import styles from '../../styles/Home.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const ProductsPage = ({data}) => {
     return(
-        <main className={styles.main}>
+        <main>
         <div>
             <h1>Products Page</h1>
         <div>
