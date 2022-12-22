@@ -4,19 +4,19 @@
             "id": "clothing",
             "title": "Clothes",
             "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/public/clothes.jpg"
+            "image": "/../public/clothes.jpg"
         },
         {
             "id": "jewelry",
             "title": "Jewelry",
             "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/public/jewelry.jpg"
+            "image": "/../public/jewelry.jpg"
         },
         {
             "id": "hijabs",
             "title": "Hijabs",
             "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/public/hijabs.jpg"
+            "image": "/../public/hijabs.jpg"
         }
     ],
     "allProducts": [
@@ -25,21 +25,21 @@
             "title": "2pc Shalwar",
             "price": "29.99",
             "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/public/clothing.jpg"
+            "image": "/../public/clothing.jpg"
         },
         {
             "id": "jewelry-2pc-necklace",
             "title": "2pc set necklace",
             "price": "29.99",
             "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/public/jewelry.jpg"
+            "image": "/../public/jewelry.jpg"
         },
         {
             "id": "hijabs-scarf",
             "title": "Hijab Scarf",
             "price": "29.99",
             "description": "dqiwudbiwud wqdibqiwubd qiwdb qwiubdq",
-            "image": "/public/hijabs.jpg"
+            "image": "/../public/hijabs.jpg"
         }
     ]
 }
