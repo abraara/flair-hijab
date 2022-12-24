@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const HomePage = ({data}) => {
     return (
-        <main className='flex gap-10 p-5'>
+        <main className='flex gap-10 p-5 justify-between'>
 
         {data.map((pr) => ( 
         <Link key={pr.id} href={`/products/${pr.id}`}> 
