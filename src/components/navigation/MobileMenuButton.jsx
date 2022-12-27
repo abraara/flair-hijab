@@ -1,11 +1,10 @@
 import React, {useState} from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { AiFillInfoCircle } from "react-icons/ai";
 import {BsChevronDown} from "react-icons/bs";
 import { HiShoppingBag, HiOutlineMail } from "react-icons/hi";
 import { ImHome, ImPriceTags } from "react-icons/im";
-
 
 function MobileMenuButton() {
     const [isOpen, setIsOpen] =  useState(false);
@@ -51,20 +50,20 @@ function MobileMenuButton() {
             </button>
           )
       }
-  <div className={`top-[80px] right-0 fixed bg-white border-x-2 w-[100vw] md:w-[20vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>         
+  <div className={`top-[80px] right-0 fixed bg-white border-x-2 w-[80vw] md:w-[20vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>         
     <div className="overflow-y-auto py-4 px-3 bg-light rounded dark:bg-gray-800">
-    <a href="/" className="flex items-center mb-5">
+    <div className="flex items-center mb-5">
          <Image src="/../public/logo.jpg" width={50} height={50} className="mr-2 h-[50px]" alt="Flowbite Logo" />
          <span className="self-center text-xl whitespace-nowrap dark:text-white">Flair Hijab</span>
-      </a>
+      </div>
       <ul className="space-y-2">
         {Menus.map((menu, index) => (
          <>
          <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
-         <a href={menu.link} className="text-base font-medium flex-1">
+         <Link href={menu.link} className="text-base font-medium flex-1 focus:text-pink-300">
             <span className="flex items-center">
                {menu.icon}
-            <span className="mx-3">{menu.title}</span> </span> </a>
+            <span className="mx-3">{menu.title}</span> </span> </Link>
                {menu.submenu && ( 
                   <BsChevronDown className={`${submenuOpen && "rotate-180"}`} onClick={() => 
                      setSubmenuOpen(!submenuOpen)}  />
@@ -75,13 +74,13 @@ function MobileMenuButton() {
                <ul>
                   {menu.submenuItems.map((submenuItem, index) => (
                      <li key={index} className="flex items-center gap-x-4 text-gray-600 cursor-pointer p-2 px-5 hover:bg-gray-100 rounded-md">
-                        <a href={submenuItem.link} className="text-base font-medium flex-1">
+                        <Link href={submenuItem.link} className="text-base font-medium flex-1 focus:text-pink-300">
                         <span className="flex items-center">
                            {submenuItem.icon}
                            <span className="mx-3">
                            {submenuItem.title}
                         </span> </span> 
-                        </a>
+                        </Link>
                      </li>
                   ))}
                </ul>
