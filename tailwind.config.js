@@ -9,7 +9,9 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      textColor: ['active'],
+    },
   },
   plugins: [ 
     require("flowbite/plugin")
