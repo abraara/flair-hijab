@@ -21,8 +21,8 @@ export const HomePage = ({data}) => {
 </header>
      
 <main className='pt-6'>
-    <div className='flex flex-wrap justify-center gap-2 md:gap-3 p-5'>
-        {data.map((pr) => ( <Link className='relative' key={pr.id} href={`/products/${pr.id}`}> <Image  className="object-top object-cover h-[250px] w-[600px] sm:w-[350px]" alt={pr.title} width={350} height={400} src={pr.image}/><h2 className='text-2xl text-center font-bold text-white uppercase w-[300px] absolute top-[60%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] drop-shadow-xl'>{pr.title}</h2></Link>))}
+    <div className='flex flex-wrap justify-center gap-3 md:gap-3 p-5'>
+        {data.map((pr) => ( <Link className='relative hover:scale-95 ease-in-out duration-300' key={pr.id} href={`/products/${pr.id}`}><Image className=" object-top object-cover h-[250px] w-[600px] sm:w-[350px]" alt={pr.title} width={350} height={400} src={pr.image}/><h2 className='text-3xl no-underline hover:underline text-white text-center font-bold uppercase w-[300px] absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] drop-shadow-xl'>{pr.title}</h2></Link>))}
     </div>
 
 </main>
