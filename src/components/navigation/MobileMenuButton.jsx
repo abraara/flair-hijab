@@ -28,7 +28,7 @@ function MobileMenuButton() {
         <>
         {!isOpen ?
           (
-            <button className="fixed z-30 flex items-center cursor-pointer right-12 top-7" onClick={() => setIsOpen(!isOpen)}>
+            <button className="fixed z-30 flex items-center cursor-pointer right-12 top-9" onClick={() => setIsOpen(!isOpen)}>
               <svg 
                 fill="grey"
                 viewBox="0 0 100 80"
