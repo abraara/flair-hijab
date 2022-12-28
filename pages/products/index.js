@@ -1,21 +1,13 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import { ProductPage } from '../../src/components/product-page/ProductPage';
 
-const ProductsPage = ({data}) => {
+export default function Products ({data}) {
     return(
-        <main>
-        <div>
-            <h1>Products Page</h1>
-        <div className='flex gap-10 p-5'>
-        {data.map((pr) => ( <Link key={pr.id} href={`/products/${pr.id}`}> <Image alt={pr.title} width={300} height={300} src={pr.image}/> <h2>{pr.title}</h2><p>{pr.description}</p> </Link>))}
-
-        </div>
-        </div>
-        </main>
+        <>
+        <ProductPage data={data}/>
+  
+      </>
     )
 }
-
-export default ProductsPage;
 
 export async function getStaticProps() {
     const {products_categories} = await import('/data/data.json');
