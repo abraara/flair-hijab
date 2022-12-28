@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { LogoSvg } from '../icons'
+import { NavLogo } from '../icons'
 
 function NavBarBranding({className, ...props}) {
     return (
-        <Link href='/'><LogoSvg/></Link>
+        <Link href='/'><NavLogo/></Link>
       );
 }
 
