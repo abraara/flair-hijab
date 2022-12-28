@@ -5,12 +5,11 @@
             "title": "Womens Clothing",
             "description": "The best clothes in Flair Hijab",
             "image": "/womens.jpg"
-        },
-        {
-            "id": "mens-clothing",
-            "title": "Mens Clothing",
-            "description": "The best clothes in Flair Hijab",
-            "image": "/mens.jpg"
+        },{
+            "id": "hijabs",
+            "title": "Hijabs",
+            "description": "Every colour hijab",
+            "image": "/hijab-home.jpg"
         },
         {
             "id": "jewelry",
@@ -19,10 +18,10 @@
             "image": "/jewelry-home.jpg"
         },
         {
-            "id": "hijabs",
-            "title": "Hijabs",
-            "description": "Every colour hijab",
-            "image": "/hijab-home.jpg"
+            "id": "mens-clothing",
+            "title": "Mens Clothing",
+            "description": "The best clothes in Flair Hijab",
+            "image": "/mens.jpg"
         }
     ],
     "allProducts": [
