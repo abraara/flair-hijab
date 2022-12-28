@@ -9,7 +9,7 @@ export const HomePage = ({data}) => {
     <figure className='float-left'>
         <figcaption className="text-black text-center w-11/12 lg:w-full mt-[200px] px-5 sm:w-[400px] md:ml-[80px]">
             <h1 className='text-5xl font-semibold md:text-6xl xl:text-7xl border-b-2 border-black pb-5'>
-        Flair Hijab<span className="block text-3xl"> Modesty in Fashion.</span>
+        Flair Hijab<span className="block text-2xl sm:text-3xl"> Modesty in Fashion.</span>
         </h1>
         <Link className='font-light font-bold mr-5 md:mr-0' href='/products'>
         <button className='m-5 bg-black text-white p-3 w-[250px] hover:bg-white hover:text-black border-2 border-black hover:ease-in-out duration-300'>
