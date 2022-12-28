@@ -28,7 +28,7 @@ function MobileMenuButton() {
         <>
         {!isOpen ?
           (
-            <button className="fixed z-30 flex items-center cursor-pointer right-12 top-9" onClick={() => setIsOpen(!isOpen)}>
+            <button className="fixed z-30 flex items-center cursor-pointer right-8 top-5 hover:bg-gray-100 rounded-full p-4" onClick={() => setIsOpen(!isOpen)}>
               <svg 
                 fill="grey"
                 viewBox="0 0 100 80"
@@ -42,7 +42,7 @@ function MobileMenuButton() {
             </button>
           ) :
           (
-            <button className="text-xl text-black fixed right-12 top-7 z-30"
+            <button className="text-xl text-black fixed right-8 top-5 hover:bg-gray-100 rounded-full p-4 z-30"
             onClick={() => setIsOpen(!isOpen)}>
               <svg 
               stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="grey" stroke-width="2" d="M3,3 L21,21 M3,21 L21,3"></path></svg>
