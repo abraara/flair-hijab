@@ -49,7 +49,7 @@ function MobileMenuButton() {
             </button>
           )
       }
-  <div className={`top-[80px] right-0 fixed bg-white border-x-2 w-[80vw] sm:w-[60vw] md:w-[30vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>         
+  <div className={`top-[80px] right-0 fixed bg-white border-x-2 w-[80vw] sm:w-[60vw] md:w-[25vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>         
     <div className="overflow-y-auto py-4 px-3 bg-light rounded dark:bg-gray-800">
     <div className="my-[-90px]">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
