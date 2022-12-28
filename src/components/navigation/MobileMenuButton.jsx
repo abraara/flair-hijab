@@ -53,7 +53,7 @@ function MobileMenuButton() {
   <div className={`top-[80px] right-0 fixed bg-white border-x-2 w-[80vw] md:w-[20vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>         
     <div className="overflow-y-auto py-4 px-3 bg-light rounded dark:bg-gray-800">
     <div className="flex items-center mb-5">
-         <Image src="/../public/logo.jpg" width={50} height={50} className="mr-2 h-[50px]" alt="Flowbite Logo" />
+         <Image src="/../public/logo.jpg" width={50} height={50} className="mr-2 h-[50px]" alt="Flair Hijab" />
          <span className="self-center text-xl whitespace-nowrap dark:text-white">Flair Hijab</span>
       </div>
       <ul className="space-y-2">
