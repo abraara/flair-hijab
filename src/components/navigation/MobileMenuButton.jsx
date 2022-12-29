@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Link from "next/link";
 import { AiFillInfoCircle } from "react-icons/ai";
-import {BsChevronDown} from "react-icons/bs";
+import {BsChevronDown, BsSearch} from "react-icons/bs";
 import { HiShoppingBag, HiOutlineMail } from "react-icons/hi";
 import { ImHome, ImPriceTags } from "react-icons/im";
 
@@ -157,6 +157,16 @@ function MobileMenuButton() {
 </svg>
 
       </div>
+      <div class="flex">
+  <div class="w-full my-2">
+    <div class="input-group relative flex flex items-stretch w-full">
+      <input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-l transition ease-in-out m-0 focus:text-gray-700 focus:bg-white  focus:outline-none outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
+      <button class="btn inline-block px-6 py-2.5 bg-gray-500 text-white font-medium text-xs leading-tight uppercase rounded-r shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none outline-none focus:ring-0 active:bg-gray-700 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
+       <BsSearch/>
+      </button>
+    </div>
+  </div>
+</div>
       <ul className="space-y-2">
         {Menus.map((menu, index) => (
          <>
