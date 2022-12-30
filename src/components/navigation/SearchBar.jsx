@@ -27,7 +27,7 @@ export default function SearchBar({placeholder, data}) {
 
   return (
     <div className='flex grid w-full'>
-        <div className='flex w-full mt-2 items-stretch hover:bg-pink-400 rounded'>
+        <div className='flex w-full mt-2 items-stretch bg-red-600 hover:bg-pink-400 rounded'>
             <input type="text" className="relative flex-auto min-w-0 block w-full px-3 py-1.5 hover:border-pink-400 focus:border-pink-400 focus:outline-none font-normal text-gray-600 bg-white border-gray-300 border-r-0 rounded-l m-0 " placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
             <div className=" px-4 py-2.5 text-gray-600 border-gray-300 border border-l-0 font-medium text-s leading-tight uppercase rounded-r hover:cursor-pointer active:shadow-lg ease-in-out flex items-center">
                 {wordEntered.length === 0 ? <BsSearch/> : <AiOutlineClose onClick={clearInput}/>}
