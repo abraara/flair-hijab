@@ -13,7 +13,7 @@ function MobileMenuButton() {
     const Menus = [
       { title: "Home", icon: <ImHome/>, link: "/" },
       { 
-         title: "Products", icon: <HiShoppingBag/>, link: "/products",
+         title: "Products", icon: <HiShoppingBag/>, link: "",
          submenu: true,
          submenuItems: [
             { title: "Womens Clothing",  icon: <ImPriceTags/>, link: "/products/womens-clothing" },
@@ -51,7 +51,7 @@ function MobileMenuButton() {
             </button>
           )
       }
-  <div className={`top-[100px] right-0 fixed bg-white border-x-2 w-[80vw] sm:w-[60vw] md:w-[40vw] lg:w-[25vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`}>         
+  <div className={`top-[100px] right-0 fixed bg-white border-x-2 w-[80vw] sm:w-[60vw] md:w-[40vw] lg:w-[25vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`} >         
     <div className="overflow-y-auto py-4 px-3 bg-light rounded dark:bg-gray-800">
     <div className="my-[-90px]">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -166,12 +166,12 @@ function MobileMenuButton() {
         {Menus.map((menu, index) => (
          <>
          <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
-         <Link href={menu.link} className="text-base font-medium flex-1 focus:text-pink-300">
+         <Link href={menu.link} className={`text-base font-medium flex-1 ${menu.title === "Products" ? "focus:none" : "focus:text-pink-300"} `}>
             <span className="flex items-center">
                {menu.icon}
             <span className="mx-3">{menu.title}</span> </span> </Link>
                {menu.submenu && ( 
-                  <BsChevronDown className={`${submenuOpen && "rotate-180"}`} onClick={() => 
+                  <BsChevronDown className={`${submenuOpen  ? "rotate-180 hover:scale-125 ease-in-out duration-300" : " hover:scale-125 ease-in-out duration-300"}`} onClick={() => 
                      setSubmenuOpen(!submenuOpen)}  />
                )}
          </li>

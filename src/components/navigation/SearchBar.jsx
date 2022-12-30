@@ -27,17 +27,17 @@ export default function SearchBar({placeholder, data}) {
 
   return (
     <div className='flex grid w-full'>
-        <div className='flex w-full mt-2 items-stretch bg-red-600 hover:bg-pink-400 rounded'>
-            <input type="text" className="relative flex-auto min-w-0 block w-full px-3 py-1.5 hover:border-pink-400 focus:border-pink-400 focus:outline-none font-normal text-gray-600 bg-white border-gray-300 border-r-0 rounded-l m-0 " placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
-            <div className=" px-4 py-2.5 text-gray-600 border-gray-300 border border-l-0 font-medium text-s leading-tight uppercase rounded-r hover:cursor-pointer active:shadow-lg ease-in-out flex items-center">
-                {wordEntered.length === 0 ? <BsSearch/> : <AiOutlineClose onClick={clearInput}/>}
+        <div className='flex w-full mt-2 items-stretch rounded'>
+            <input type="text" className="relative flex-auto  block w-full px-3 py-1.5 focus:outline-none font-normal text-gray-600 bg-white border-gray-300 border-r-0 rounded-l m-0 " placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
+            <div className="px-4 py-2.5 text-gray-600 border-gray-300 border border-l-0 font-medium text-s leading-tight uppercase rounded-r  flex items-center">
+                {wordEntered.length === 0 ? <BsSearch/> : <AiOutlineClose className='hover:cursor-pointer active:shadow-lg hover:scale-125 ease-in-out duration-300' onClick={clearInput}/>}
                 </div>
         </div>
         {filteredData.length != 0 && (
-        <div className=' w-full h-full overflow-hidden overflow-y-auto '>
-            {filteredData.slice(0,4).map((value,key) => { 
+        <div className='w-full min-h-0 max-h-[175px] overflow-hidden overflow-y-auto'>
+            {filteredData.slice(0,15).map((value,key) => { 
                 return ( 
-                 <Link className='w-full h-[50px] flex items-center hover:bg-gray-100 rounded text-gray-600' href={`/products/${value.category}/${value.id}`}><p className='ml-3'>{value.title}</p></Link>
+                 <Link className='w-full h-[45px] flex items-center hover:bg-gray-100 rounded text-gray-600 focus:text-pink-300' href={`/products/${value.category}/${value.id}`}><p className='ml-3'>{value.title}</p></Link>
                 );
             })}
         </div>
