@@ -32,10 +32,10 @@ export const HomePage = ({data}) => {
 }
 
 export async function getServerSideProps() {
-    const data = await import('/data/categories.json');
+    const {products_categories} = await import('/data/data.json');
       return {
           props:{
-              data: data,
+              data: products_categories,
           },
       };
   }

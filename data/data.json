@@ -1,4 +1,31 @@
-[
+{
+"products_categories": [
+        {
+            "id": "womens-clothing",
+            "title": "Womens Clothing",
+            "description": "The best clothes in Flair Hijab",
+            "image": "/womens.jpg"
+        },{
+            "id": "hijabs",
+            "title": "Hijabs",
+            "description": "Every colour hijab",
+            "image": "/hijab-home.jpg"
+        },
+        {
+            "id": "jewelry",
+            "title": "Jewelry",
+            "description": "All the jewelry you need",
+            "image": "/jewelry-home.jpg"
+        },
+        {
+            "id": "mens-clothing",
+            "title": "Mens Clothing",
+            "description": "The best clothes in Flair Hijab",
+            "image": "/mens.jpg"
+        }
+    ],
+    
+"allProducts": [
     {
         "id": "clothing-shalwar-2pc",
         "category": "clothing",
@@ -80,3 +107,4 @@
         "image": "/products/hijabs.jpg"
     }
 ]
+}

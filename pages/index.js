@@ -10,10 +10,10 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps() {
-  const data = await import('/data/categories.json');
+  const {products_categories} = await import('/data/data.json');
     return {
         props:{
-            data: data,
+            data: products_categories,
         },
     };
 }

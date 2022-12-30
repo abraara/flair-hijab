@@ -1,27 +1,42 @@
 import React, {useState} from 'react'
 import {BsSearch} from "react-icons/bs";
-// import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import Link from 'next/link';
 
 export default function SearchBar({placeholder, data}) {
     const [filteredData, setFilteredData] = useState([]);
+    const [wordEntered, setWordEntered] = useState("");
 
     const handleFilter = (event) => {
        const searchWord = event.target.value
-       const newFilter = data.filter((value) => {
-            return value.title.includes(searchWord);
+       setWordEntered(searchWord);
+       const newFilter = data.allProducts.filter((value) => {
+            return value.title.toLowerCase().includes(searchWord.toLowerCase());
        });
-       setFilteredData(newFilter);
+
+       if (searchWord === "") {
+        setFilteredData([]);
+       } else {
+        setFilteredData(newFilter);
+       }
+
+    }
+
+    const clearInput = () => {
+        setFilteredData([]);
+        setWordEntered("");
     }
   return (
     <div className='flex grid w-full'>
         <div className='flex w-full mt-2 items-stretch'>
-            <input className="relative flex-auto min-w-0 block w-full px-3 py-1.5  font-normal text-gray-600 bg-white  border-gray-300 rounded-l m-0 focus:outline-none" type="text" placeholder={placeholder} onChange={handleFilter} />
-            <div className="btn inline-block px-4 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded-r shadow-md hover:bg-gray-700 hover:cursor-pointer hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none active:bg-gray-700 active:shadow-lg transition duration-150 ease-in-out flex items-center"><BsSearch/></div>
+            <input className="relative flex-auto min-w-0 block w-full px-3 py-1.5  font-normal text-gray-600 bg-white  border-gray-300 rounded-l m-0 focus:outline-none" type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
+            <div className="btn inline-block px-4 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded-r shadow-md hover:bg-gray-700 hover:cursor-pointer hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none active:bg-gray-700 active:shadow-lg transition duration-150 ease-in-out flex items-center">
+                {wordEntered.length === 0 ? <BsSearch/> : <AiOutlineClose onClick={clearInput}/>}
+                </div>
         </div>
         {filteredData.length != 0 && (
         <div className=' w-full h-[200px] overflow-hidden overflow-y-auto '>
-            {filteredData.map((value,key) => { 
+            {filteredData.slice(0,15).map((value,key) => { 
                 return ( 
                  <Link className='w-full h-[50px] flex items-center hover:bg-gray-100 rounded text-gray-600' href={`/products/${value.category}/${value.id}`}><p className='ml-3'>{value.title}</p></Link>
                 );
@@ -31,6 +46,8 @@ export default function SearchBar({placeholder, data}) {
     </div>
   )
 }
+
+
 
 
 
