@@ -13,7 +13,7 @@ function MobileMenuButton() {
     const Menus = [
       { title: "Home", icon: <ImHome/>, link: "/" },
       { 
-         title: "Products", icon: <HiShoppingBag/>, link: "",
+         title: "Products", icon: <HiShoppingBag/>,
          submenu: true,
          submenuItems: [
             { title: "Womens Clothing",  icon: <ImPriceTags/>, link: "/products/womens-clothing" },
@@ -166,7 +166,7 @@ function MobileMenuButton() {
         {Menus.map((menu, index) => (
          <>
          <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
-         <Link href={menu.link} className={`text-base font-medium flex-1 ${menu.title === "Products" ? "focus:none" : "focus:text-pink-300"} `}>
+         <Link href={menu.link ? menu.link : "#"} className={`text-base font-medium flex-1 ${menu.title === "Products" ? "focus:none" : "focus:text-pink-300"} `}>
             <span className="flex items-center">
                {menu.icon}
             <span className="mx-3">{menu.title}</span> </span> </Link>
