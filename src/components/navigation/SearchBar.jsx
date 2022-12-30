@@ -19,24 +19,23 @@ export default function SearchBar({placeholder, data}) {
        } else {
         setFilteredData(newFilter);
        }
-
     }
-
     const clearInput = () => {
         setFilteredData([]);
         setWordEntered("");
     }
+
   return (
     <div className='flex grid w-full'>
-        <div className='flex w-full mt-2 items-stretch'>
-            <input className="relative flex-auto min-w-0 block w-full px-3 py-1.5  font-normal text-gray-600 bg-white  border-gray-300 rounded-l m-0 focus:outline-none" type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
-            <div className="btn inline-block px-4 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded-r shadow-md hover:bg-gray-700 hover:cursor-pointer hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none active:bg-gray-700 active:shadow-lg transition duration-150 ease-in-out flex items-center">
+        <div className='flex w-full mt-2 items-stretch hover:bg-pink-400 rounded'>
+            <input type="text" className="relative flex-auto min-w-0 block w-full px-3 py-1.5 hover:border-pink-400 focus:border-pink-400 focus:outline-none font-normal text-gray-600 bg-white border-gray-300 border-r-0 rounded-l m-0 " placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
+            <div className=" px-4 py-2.5 text-gray-600 border-gray-300 border border-l-0 font-medium text-s leading-tight uppercase rounded-r hover:cursor-pointer active:shadow-lg ease-in-out flex items-center">
                 {wordEntered.length === 0 ? <BsSearch/> : <AiOutlineClose onClick={clearInput}/>}
                 </div>
         </div>
         {filteredData.length != 0 && (
-        <div className=' w-full h-[200px] overflow-hidden overflow-y-auto '>
-            {filteredData.slice(0,15).map((value,key) => { 
+        <div className=' w-full h-full overflow-hidden overflow-y-auto '>
+            {filteredData.slice(0,4).map((value,key) => { 
                 return ( 
                  <Link className='w-full h-[50px] flex items-center hover:bg-gray-100 rounded text-gray-600' href={`/products/${value.category}/${value.id}`}><p className='ml-3'>{value.title}</p></Link>
                 );
@@ -46,18 +45,3 @@ export default function SearchBar({placeholder, data}) {
     </div>
   )
 }
-
-
-
-
-
-{/* <div className="flex">
-    <div className="w-full my-2">
-      <div className="input-group relative flex flex items-stretch w-full">
-        <input type="search" className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-l transition ease-in-out m-0 focus:text-gray-700 focus:bg-white  focus:outline-none outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
-        <button className="btn inline-block px-6 py-2.5 bg-gray-500 text-white font-medium text-xs leading-tight uppercase rounded-r shadow-md hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none outline-none focus:ring-0 active:bg-gray-700 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
-         <BsSearch/>
-        </button>
-      </div>
-    </div>
-  </div> */}
