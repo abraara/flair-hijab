@@ -1,0 +1,82 @@
+[
+    {
+        "id": "clothing-shalwar-2pc",
+        "category": "clothing",
+        "title": "2pc Shalwar Kameez",
+        "price": "29.99",
+        "description": "2pc shalwar kameez",
+        "image": "/products/clothes.jpg"
+    },
+    {
+        "id": "clothing-shalwar-3pc",
+        "category": "clothing",
+        "title": "3pc Shalwar Kameez",
+        "price": "39.99",
+        "description": "3pc shalwar kameez",
+        "image": "/products/clothes.jpg"
+    },
+    {
+        "id": "clothing-kameez-1pc",
+        "category": "clothing",
+        "title": "1pc Kameez",
+        "price": "19.99",
+        "description": "1pc kameez",
+        "image": "/products/clothes.jpg"
+    },
+    {
+        "id": "jewelry-pakistani",
+        "category": "jewelry",
+        "title": "pakistani jewelry",
+        "price": "29.99",
+        "description": "pakistani",
+        "image": "/products/jewelry.jpg"
+    },
+    {
+        "id": "jewelry-indian",
+        "category": "jewelry",
+        "title": "indian jewelry",
+        "price": "29.99",
+        "description": "indian",
+        "image": "/products/jewelry.jpg"
+    },
+    {
+        "id": "jewelry-turkish",
+        "category": "jewelry",
+        "title": "turkish jewelry",
+        "price": "29.99",
+        "description": "turkish",
+        "image": "/products/jewelry.jpg"
+    },
+    {
+        "id": "hijabs-chiffon",
+        "category": "hijabs",
+        "title": "Chiffon Hijabs",
+        "price": "29.99",
+        "description": "Chiffon Hijabs",
+        "image": "/products/hijabs.jpg"
+    },
+    {
+        "id": "hijabs-jersey",
+        "category": "hijabs",
+        "title": "Jersey Hijabs",
+        "price": "29.99",
+        "description": "Jersey Hijabs",
+        "image": "/products/hijabs.jpg"
+    },
+    {
+        "id": "hijabs-cotton",
+        "category": "hijabs",
+        "title": "Cotton Hijabs",
+        "price": "29.99",
+        "description": "Cotton Hijabs",
+        "image": "/products/hijabs.jpg"
+    },
+    {
+        "id": "hijabs-accessories",
+        "category": "hijabs",
+        "title": "Hijab Accessories",
+        "price": "29.99",
+        "description": "Hijab Accessories",
+        "image": "/products/hijabs.jpg"
+    }
+]
