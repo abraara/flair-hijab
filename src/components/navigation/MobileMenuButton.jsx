@@ -165,7 +165,7 @@ function MobileMenuButton() {
       <ul className="space-y-2">
         {Menus.map((menu, index) => (
          <>
-         <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
+         <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 hover:text-pink-300 ease-in-out duration-100 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
          <Link href={menu.link ? menu.link : "#"} className={`text-base font-medium flex-1 ${menu.title === "Products" ? "focus:none" : "focus:text-pink-300"} `}>
             <span className="flex items-center">
                {menu.icon}
@@ -179,7 +179,7 @@ function MobileMenuButton() {
             {menu.submenu && submenuOpen &&(
                <ul>
                   {menu.submenuItems.map((submenuItem, index) => (
-                     <li key={index} className="flex items-center gap-x-4 text-gray-600 cursor-pointer p-2 px-5 hover:bg-gray-100 rounded-md">
+                     <li key={index} className="flex items-center gap-x-4 text-gray-600 cursor-pointer p-2 px-5 hover:bg-gray-100 hover:text-pink-300 ease-in-out duration-100 rounded-md">
                         <Link href={submenuItem.link} className="text-base font-medium flex-1 focus:text-pink-300">
                         <span className="flex items-center">
                            {submenuItem.icon}

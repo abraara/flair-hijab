@@ -28,7 +28,7 @@
 "allProducts": [
     {
         "id": "clothing-shalwar-2pc",
-        "category": "clothing",
+        "category": "womens-clothing",
         "title": "2pc Shalwar Kameez",
         "price": "29.99",
         "description": "2pc shalwar kameez",
@@ -36,7 +36,7 @@
     },
     {
         "id": "clothing-shalwar-3pc",
-        "category": "clothing",
+        "category": "womens-clothing",
         "title": "3pc Shalwar Kameez",
         "price": "39.99",
         "description": "3pc shalwar kameez",
@@ -44,7 +44,7 @@
     },
     {
         "id": "clothing-kameez-1pc",
-        "category": "clothing",
+        "category": "womens-clothing",
         "title": "1pc Kameez",
         "price": "19.99",
         "description": "1pc kameez",

@@ -12,6 +12,7 @@
     "@next/font": "13.0.7",
     "bootstrap": "^5.2.3",
     "classnames": "^2.3.2",
+    "emailjs-com": "^3.2.0",
     "flowbite": "^1.5.5",
     "flowbite-react": "^0.3.7",
     "next": "13.0.7",
