@@ -4,7 +4,7 @@ import NavBarLinks from "./NavBarLinks";
 
 function NavBar() {
     return ( 
-        <nav className="text-black bg-white dark:bg-black shadow fixed z-30 flex justify-between items-center w-full">
+        <nav className="text-black bg-white shadow fixed z-30 flex justify-between items-center w-full">
             <div>
                 <NavBarBranding />
             </div>

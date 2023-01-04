@@ -13,7 +13,7 @@ export const HomePage = ({data}) => {
             </h1>
             <Link className='font-light font-bold mr-5 md:mr-0' href='/products'>
             <button className='m-5 bg-black text-white p-3 w-[250px] hover:bg-white hover:text-black border-2 border-black hover:ease-in-out duration-300'>
-            SHOP NOW
+            BROWSE COLLECTION
             </button>
             </Link>
         </figcaption>
