@@ -37,7 +37,7 @@ export const Footer = () => {
                     <p className="flex gap-2"><TfiEmail className="mt-1"/> flarefashion5@hotmail.com</p>
                 </li>
                 <li>
-                   <Link href="tel:780-807-6164"><p className="flex gap-2"><BsTelephone className="mt-1" /> (780) 807-6164</p></Link> 
+                   <Link href="tel:780-807-6164" className="hover:underline"><p className="flex gap-2"><BsTelephone className="mt-1" /> (780) 807-6164</p></Link> 
                 </li>
                 </ul>
             </div>
