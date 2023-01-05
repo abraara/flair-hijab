@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import Link from "next/link";
 import { AiFillInfoCircle } from "react-icons/ai";
 import {BsChevronDown} from "react-icons/bs";
-import { HiShoppingBag, HiOutlineMail } from "react-icons/hi";
+import { HiShoppingBag, } from "react-icons/hi";
 import { ImHome, ImPriceTags } from "react-icons/im";
+import { MdEmail } from "react-icons/md";
 import SearchBar from "./SearchBar";
 import SearchResults from './../../../data/data.json'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
@@ -24,7 +25,7 @@ function MobileMenuButton() {
          ],  
       },
       { title: "About Us", spacing: true, icon: <AiFillInfoCircle/>, link: "/about-us"   },
-      { title: "Contact", icon: <HiOutlineMail/>, link: "/contact" },
+      { title: "Contact", icon: <MdEmail/>, link: "/contact" },
     ];
 
     return (
@@ -52,8 +53,8 @@ function MobileMenuButton() {
             </button>
           )
       }
-  <div className={`top-[100px] right-0 fixed bg-white border-x w-[80vw] shadow-xl sm:w-[60vw] md:w-[40vw] lg:w-[25vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`} >         
-    <div className="overflow-y-auto py-4 px-3 bg-light rounded dark:bg-gray-800">
+  <div className={`top-[100px] right-0 fixed bg-white border-x w-[80vw] shadow-xl overflow-y-auto sm:w-[60vw] md:w-[40vw] lg:w-[25vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`} >         
+    <div className=" py-4 px-3 rounded ">
     <div className="my-[-90px]">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="full" height="300" viewBox="0 0 500.000000 500.000000">
@@ -163,7 +164,7 @@ function MobileMenuButton() {
         <SearchBar placeholder="Search" data={SearchResults} />
       </div>
      
-      <ul className="space-y-2">
+      <ul className="space-y-2 pb-[170px]">
         {Menus.map((menu, index) => (
          <>
          <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 hover:text-pink-300 ease-in-out duration-100 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
@@ -195,10 +196,10 @@ function MobileMenuButton() {
          </>
         ))}
       </ul>
-      <ul className="mt-3 justify-center flex gap-3">
+      <ul className="justify-center flex gap-3 pb-[100px]">
          <li>
             <Link href="https://www.facebook.com/Flair.hijab" target="_blank">
-            <button id="facebook" className="bg-white sticky duration-500 border-2 border-blue-600 fixed w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
+            <button id="facebook" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
             <FaFacebookF className="mx-auto"/>
             </button>
             </Link>
@@ -211,9 +212,11 @@ function MobileMenuButton() {
             </Link>
          </li>
          <li>
-            <button id="tiktok" class="bg-white transform hover:-translate-y-3  border-2 w-10 h-10 rounded-full duration-500 text-black border-black hover:bg-black hover:text-white text-2xl">
+            <Link href="https://www.tiktok.com/@flairhijab" target="_blank">
+            <button id="tiktok" class="bg-white transform hover:-translate-y-3 border-2 w-10 h-10 rounded-full duration-500 text-black border-black hover:bg-black hover:text-white text-2xl">
             <FaTiktok className="mx-auto" />
             </button>
+            </Link>
          </li>
       </ul>
    </div>
