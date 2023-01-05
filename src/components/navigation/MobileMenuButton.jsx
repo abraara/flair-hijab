@@ -54,7 +54,7 @@ function MobileMenuButton() {
           )
       }
   <div className={`top-[100px] right-0 fixed bg-white border-x w-[80vw] shadow-xl overflow-y-auto sm:w-[60vw] md:w-[40vw] lg:w-[25vw] h-full p-1 z-10 ${isOpen ? 'translate-x-0' : 'translate-x-full'} ease-in-out duration-300`} >         
-    <div className=" py-4 px-3 rounded ">
+    <div className=" py-4 px-4 rounded ">
     <div className="my-[-90px]">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="full" height="300" viewBox="0 0 500.000000 500.000000">
@@ -164,7 +164,7 @@ function MobileMenuButton() {
         <SearchBar placeholder="Search" data={SearchResults} />
       </div>
      
-      <ul className="space-y-2 pb-[170px]">
+      <ul className="space-y-2 pb-[170px] pt-2">
         {Menus.map((menu, index) => (
          <>
          <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 hover:text-pink-300 ease-in-out duration-100 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
