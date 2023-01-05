@@ -1,24 +1,24 @@
 {
 "products_categories": [
         {
-            "id": "womens-clothing",
+            "id": "Womens Clothing",
             "title": "Womens Clothing",
             "description": "The best clothes in Flair Hijab",
             "image": "/womens.jpg"
         },{
-            "id": "hijabs",
+            "id": "Hijabs",
             "title": "Hijabs",
             "description": "Every colour hijab",
             "image": "/hijab-home.jpg"
         },
         {
-            "id": "jewelry",
+            "id": "Jewelry",
             "title": "Jewelry",
             "description": "All the jewelry you need",
             "image": "/jewelry-home.jpg"
         },
         {
-            "id": "mens-clothing",
+            "id": "Mens Clothing",
             "title": "Mens Clothing",
             "description": "The best clothes in Flair Hijab",
             "image": "/mens.jpg"
@@ -28,7 +28,7 @@
 "allProducts": [
     {
         "id": "clothing-shalwar-2pc",
-        "category": "womens-clothing",
+        "category": "Womens Clothing",
         "title": "2pc Shalwar Kameez",
         "price": "29.99",
         "description": "2pc shalwar kameez",
@@ -36,7 +36,7 @@
     },
     {
         "id": "clothing-shalwar-3pc",
-        "category": "womens-clothing",
+        "category": "Womens Clothing",
         "title": "3pc Shalwar Kameez",
         "price": "39.99",
         "description": "3pc shalwar kameez",
@@ -44,7 +44,7 @@
     },
     {
         "id": "clothing-kameez-1pc",
-        "category": "womens-clothing",
+        "category": "Womens Clothing",
         "title": "1pc Kameez",
         "price": "19.99",
         "description": "1pc kameez",
@@ -52,7 +52,7 @@
     },
     {
         "id": "jewelry-pakistani",
-        "category": "jewelry",
+        "category": "Jewelry",
         "title": "pakistani jewelry",
         "price": "29.99",
         "description": "pakistani",
@@ -60,7 +60,7 @@
     },
     {
         "id": "jewelry-indian",
-        "category": "jewelry",
+        "category": "Jewelry",
         "title": "indian jewelry",
         "price": "29.99",
         "description": "indian",
@@ -68,7 +68,7 @@
     },
     {
         "id": "jewelry-turkish",
-        "category": "jewelry",
+        "category": "Jewelry",
         "title": "turkish jewelry",
         "price": "29.99",
         "description": "turkish",
@@ -76,7 +76,7 @@
     },
     {
         "id": "hijabs-chiffon",
-        "category": "hijabs",
+        "category": "Hijabs",
         "title": "Chiffon Hijabs",
         "price": "29.99",
         "description": "Chiffon Hijabs",
@@ -84,7 +84,7 @@
     },
     {
         "id": "hijabs-jersey",
-        "category": "hijabs",
+        "category": "Hijabs",
         "title": "Jersey Hijabs",
         "price": "29.99",
         "description": "Jersey Hijabs",
@@ -92,7 +92,7 @@
     },
     {
         "id": "hijabs-cotton",
-        "category": "hijabs",
+        "category": "Hijabs",
         "title": "Cotton Hijabs",
         "price": "29.99",
         "description": "Cotton Hijabs",
@@ -100,7 +100,7 @@
     },
     {
         "id": "hijabs-accessories",
-        "category": "hijabs",
+        "category": "Hijabs",
         "title": "Hijab Accessories",
         "price": "29.99",
         "description": "Hijab Accessories",

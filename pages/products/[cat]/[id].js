@@ -2,11 +2,13 @@ import Image from 'next/image'
 
 const ProductInCatPage = ({data}) => {
     return( 
-        <div>
-            <Image src={data.image} width={800} height={500} alt={data.title} />
-            <h1>{data.title}</h1>
-            <p>{data.description}</p>
-        </div> 
+        <main>
+            <div>
+                <Image src={data.image} width={800} height={500} alt={data.title} />
+                <h1>{data.title}</h1>
+                <p>{data.description} {data.price}</p>
+            </div> 
+        </main>
     )
 }
 

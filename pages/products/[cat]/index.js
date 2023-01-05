@@ -3,8 +3,9 @@ import Link from 'next/link'
 
 const ProductsCatPage = ({data, pageName}) => {
     return( 
+        <main>
         <div>
-        <h1>{pageName} products</h1>  
+        <h1 className='first-letter:uppercase pt-4 lg:pt-8 mb-4 text-4xl tracking-tight font-extrabold text-center'>{pageName}</h1>  
         
          {data.map((pr) => (
         <Link key={pr.id} href={`/products/${pr.category}/${pr.id}`}>
@@ -14,6 +15,7 @@ const ProductsCatPage = ({data, pageName}) => {
          </Link>
          ))}
          </div>
+         </main>
     )
 }
 

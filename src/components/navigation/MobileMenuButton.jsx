@@ -6,6 +6,7 @@ import { HiShoppingBag, HiOutlineMail } from "react-icons/hi";
 import { ImHome, ImPriceTags } from "react-icons/im";
 import SearchBar from "./SearchBar";
 import SearchResults from './../../../data/data.json'
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 function MobileMenuButton() {
     const [isOpen, setIsOpen] =  useState(false);
@@ -13,13 +14,13 @@ function MobileMenuButton() {
     const Menus = [
       { title: "Home", icon: <ImHome/>, link: "/" },
       { 
-         title: "Products", icon: <HiShoppingBag/>,
+         title: "Products", icon: <HiShoppingBag/>, link: "/products",
          submenu: true,
          submenuItems: [
-            { title: "Womens Clothing",  icon: <ImPriceTags/>, link: "/products/womens-clothing" },
-            { title: "Mens Clothing",  icon: <ImPriceTags/>, link: "/products/mens-clothing" },
-            { title: "Jewelry",  icon: <ImPriceTags/>, link: "/products/jewelry" },
-            { title: "Hijabs",  icon: <ImPriceTags/>, link: "/products/hijabs" },
+            { title: "Womens Clothing",  icon: <ImPriceTags/>, link: "/products/Womens%20Clothing" },
+            { title: "Mens Clothing",  icon: <ImPriceTags/>, link: "/products/Mens%20Clothing" },
+            { title: "Jewelry",  icon: <ImPriceTags/>, link: "/products/Jewelry" },
+            { title: "Hijabs",  icon: <ImPriceTags/>, link: "/products/Hijabs" },
          ],  
       },
       { title: "About Us", spacing: true, icon: <AiFillInfoCircle/>, link: "/about-us"   },
@@ -193,6 +194,27 @@ function MobileMenuButton() {
             )}
          </>
         ))}
+      </ul>
+      <ul className="mt-3 justify-center flex gap-3">
+         <li>
+            <Link href="https://www.facebook.com/Flair.hijab" target="_blank">
+            <button id="facebook" className="bg-white sticky duration-500 border-2 border-blue-600 fixed w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
+            <FaFacebookF className="mx-auto"/>
+            </button>
+            </Link>
+         </li>
+         <li>
+            <Link href="https://www.instagram.com/flairhijab/?hl=en" target="_blank">
+            <button id="instagram" class=" border-2 hover:border-0 border-pink-500 bg-gradient-to-b text-2xl hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 min-w-wull hover:text-white bg-white text-pink-600 w-10 h-10  transform hover:-translate-y-3 rounded-full duration-500 ">
+            <FaInstagram className="mx-auto" />
+            </button>
+            </Link>
+         </li>
+         <li>
+            <button id="tiktok" class="bg-white transform hover:-translate-y-3  border-2 w-10 h-10 rounded-full duration-500 text-black border-black hover:bg-black hover:text-white text-2xl">
+            <FaTiktok className="mx-auto" />
+            </button>
+         </li>
       </ul>
    </div>
   </div>

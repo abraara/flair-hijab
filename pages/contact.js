@@ -42,7 +42,7 @@ const ContactPage = () => {
     
 <main>
   <div className="py-4 lg:py-8 px-8 md:px-2 mx-auto max-w-screen-md">
-      <h2 className = "mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Us</h2>
+      <h2 className = "mb-4 text-4xl tracking-tight font-extrabold text-center">Get In Touch</h2>
       <p className = " mb-5 lg:mb-8 font-light text-center text-gray-500 sm:text-xl">Any pricing questions? Want to send feedback about any of our products? Need more details about a certain item? Let us know.</p>
       <form ref={form} onSubmit={sendEmail} className="space-y-8">
             <div>
@@ -61,7 +61,7 @@ const ContactPage = () => {
               <label htmlFor="message" className="block mb-2">Message/Concern</label>
               <textarea id="message" name='message' rows="6" className="block p-2.5 w-full min-h-max text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 hover:border-pink-300 focus:ring-pink-300 focus:border-pink-300"></textarea>
           </div>
-          <button type="submit" name='send' className="py-2 px-5 font-medium text-center rounded-lg bg-pink-300 border border-pink-400 sm:w-fit hover:bg-pink-500 focus:ring-4 focus:outline-none focus:ring-pink-300 hover:text-white ease-in-out duration-300">Send Message</button>
+          <button type="submit" name='send' className="py-2 px-5 font-medium text-center text-white rounded-lg bg-pink-400 border border-pink-400 sm:w-fit hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-300 hover:text-white ease-in-out duration-300">Send Message</button>
       </form>
   </div>
   </main>

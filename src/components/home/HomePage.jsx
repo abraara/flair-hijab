@@ -22,7 +22,7 @@ export const HomePage = ({data}) => {
      
 <main className='pt-6'>
     <div className='flex flex-wrap justify-center gap-3 p-5'>
-        {data.map((pr) => ( <Link className='relative hover:scale-[98%] hover:border-black p-1 hover:border ease-in-out duration-300' key={pr.id} href={`/products/${pr.id}`}><Image className="object-top object-cover h-[250px] w-[600px] sm:w-[350px]" alt={pr.title} width={600} height={250} src={pr.image}/><h2 className='text-3xl no-underline hover:underline text-white text-center font-bold uppercase w-[300px] absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] drop-shadow-xl'>{pr.title}</h2></Link>))}
+        {data.map((pr) => ( <Link className='relative hover:scale-[98%] hover:border-black p-1 hover:border ease-in-out duration-300' key={pr.id} href={`/products/${pr.id}`}><Image className="object-top object-cover h-[300px] sm:h-[250px] w-[600px] sm:w-[350px]" alt={pr.title} width={600} height={250} src={pr.image}/><h2 className='text-3xl no-underline hover:underline text-white text-center font-bold uppercase w-[300px] absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] drop-shadow-xl'>{pr.title}</h2></Link>))}
     </div>
 
 </main>
