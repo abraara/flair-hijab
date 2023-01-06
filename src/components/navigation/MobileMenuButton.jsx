@@ -164,7 +164,7 @@ function MobileMenuButton() {
         <SearchBar placeholder="Search" data={SearchResults} />
       </div>
      
-      <ul className="space-y-2 pb-[170px] pt-2">
+      <ul className="space-y-2 pb-[150px] pt-2">
         {Menus.map((menu, index) => (
          <>
          <li key={index} className={`flex items-center gap-x-4 cursor-pointer p-2 hover:bg-gray-100 text-gray-600 hover:text-pink-300 ease-in-out duration-100 rounded-md ${menu.spacing ? "mt-9" : "mt-2"}`}>
@@ -196,7 +196,7 @@ function MobileMenuButton() {
          </>
         ))}
       </ul>
-      <ul className="justify-center flex gap-3 pb-[100px]">
+      <ul className="justify-center flex gap-3 pb-[140px]">
          <li>
             <Link href="https://www.facebook.com/Flair.hijab" target="_blank">
             <button id="facebook" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
