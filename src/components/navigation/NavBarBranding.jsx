@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { NavLogo } from '../icons'
+import { NavLogo } from '../icons/index.js'
 
 function NavBarBranding({className, ...props}) {
     return (
