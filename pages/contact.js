@@ -61,7 +61,9 @@ const ContactPage = () => {
               <label htmlFor="message" className="block mb-2">Message/Concern</label>
               <textarea id="message" name='message' rows="6" className="block p-2.5 w-full min-h-max text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 hover:border-pink-300 focus:ring-pink-300 focus:border-pink-300"></textarea>
           </div>
-          <button type="submit" name='send' className="py-2 px-5 font-medium text-center text-white rounded-lg bg-pink-400 border border-pink-400 sm:w-fit hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-300 hover:text-white ease-in-out duration-300">Send Message</button>
+          <div>
+              <button type="submit" name='send' className="py-2 px-5 block w-full font-medium text-center text-zinc-600 rounded-lg bg-rose-200 border border-rose-300 sm:w-fit hover:bg-rose-400 focus:ring-4 focus:outline-none focus:ring-rose-300 hover:text-white ease-in-out duration-300">Send Message</button>
+          </div>
       </form>
   </div>
   </main>

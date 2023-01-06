@@ -32,6 +32,7 @@
         "title": "2pc Shalwar Kameez",
         "price": "29.99",
         "description": "2pc shalwar kameez",
+        "link": "facebook.com",
         "image": "/products/clothes.jpg"
     },
     {
@@ -40,6 +41,7 @@
         "title": "3pc Shalwar Kameez",
         "price": "39.99",
         "description": "3pc shalwar kameez",
+        "link": "facebook.com",
         "image": "/products/clothes.jpg"
     },
     {
@@ -48,6 +50,7 @@
         "title": "1pc Kameez",
         "price": "19.99",
         "description": "1pc kameez",
+        "link": "facebook.com",
         "image": "/products/clothes.jpg"
     },
     {
@@ -56,6 +59,7 @@
         "title": "pakistani jewelry",
         "price": "29.99",
         "description": "pakistani",
+        "link": "facebook.com",
         "image": "/products/jewelry.jpg"
     },
     {
@@ -64,6 +68,7 @@
         "title": "indian jewelry",
         "price": "29.99",
         "description": "indian",
+        "link": "facebook.com",
         "image": "/products/jewelry.jpg"
     },
     {
@@ -72,6 +77,7 @@
         "title": "turkish jewelry",
         "price": "29.99",
         "description": "turkish",
+        "link": "facebook.com",
         "image": "/products/jewelry.jpg"
     },
     {
@@ -80,6 +86,7 @@
         "title": "Chiffon Hijabs",
         "price": "29.99",
         "description": "Chiffon Hijabs",
+        "link": "facebook.com",
         "image": "/products/hijabs.jpg"
     },
     {
@@ -88,6 +95,7 @@
         "title": "Jersey Hijabs",
         "price": "29.99",
         "description": "Jersey Hijabs",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid0za4yUpyiTjnQjTtojAJAxA5XM5Vg396158mh1WZZYPiQhpoE1Rp5d8sHwNHPMCSRl&show_text=true&width=500",
         "image": "/products/hijabs.jpg"
     },
     {
@@ -96,6 +104,7 @@
         "title": "Cotton Hijabs",
         "price": "29.99",
         "description": "Cotton Hijabs",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid02LuDBd2rN4uVVk99UxbtDKEKvqSiP8uTb7ze3S1VwjszvbZSp6iyWHQk2FxVBEb3Xl&show_text=true&width=500",
         "image": "/products/hijabs.jpg"
     },
     {
@@ -104,6 +113,7 @@
         "title": "Hijab Accessories",
         "price": "29.99",
         "description": "Hijab Accessories",
+        "link": "facebook.com",
         "image": "/products/hijabs.jpg"
     }
 ]

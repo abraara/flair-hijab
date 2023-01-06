@@ -7,13 +7,15 @@ const ProductsCatPage = ({data, pageName}) => {
         <div>
         <h1 className='first-letter:uppercase pt-4 lg:pt-8 mb-4 text-4xl tracking-tight font-extrabold text-center'>{pageName}</h1>  
         
-         {data.map((pr) => (
-        <Link key={pr.id} href={`/products/${pr.category}/${pr.id}`}>
-        <Image alt={pr.title} width={300} height={300} src={pr.image}/> 
-         <h2>{pr.title}</h2>
-         <p>{pr.description} {pr.price}</p> 
-         </Link>
-         ))}
+        <div className='flex flex-wrap columns-4 gap-3 justify-center text-center p-5'>
+            {data.map((pr) => (
+            <Link className='hover:bg-gray-200 hover:scale-[95%] rounded border border-black' key={pr.id} href={`/products/${pr.category}/${pr.id}`}>
+            <Image className='' alt={pr.title} width={350} height={350} src={pr.image}/> 
+            <h2>{pr.title}</h2>
+            <p>{pr.description} {pr.price}</p> 
+            </Link>
+            ))}
+         </div>
          </div>
          </main>
     )
