@@ -2,12 +2,16 @@ import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 import { BsTelephone } from "react-icons/bs";
 import Link from "next/link";
+import { FooterLogo } from '../icons/index.js'
 
 export const Footer = () => {
     return (
-        <footer className="text-center flex justify-between items-center h-[150px] bg-gray-200 shadow-2xl">
-            <div className="px-5">
-                <ul className="flex gap-3">
+        <footer className="bg-gray-100 shadow-2xl">
+            <div className="px-5 flex flex-wrap justify-center sm:justify-between items-center h-[350px] md:h-full">
+            <div className="">
+                <Link href="/"><FooterLogo /></Link>
+            </div>
+                <ul className="flex gap-3 p-5 pb-0 md:ml-[125px]">
                 <li>
                     <Link href="https://www.facebook.com/Flair.hijab" target="_blank">
                     <button id="facebook" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
@@ -30,17 +34,17 @@ export const Footer = () => {
                     </Link>
                 </li>
                 </ul>
-                </div>
-                <div className="gap-3 px-5">
-                    <ul className="flex flex-wrap gap-3">
+                <div className="px-5 text-lg">
+                    <ul className="p-5 pt-0 sm:pt-[40px]">
                 <li>
-                    <Link href="mailto:flarefashion5@hotmail.com" className="hover:underline"><p className="flex gap-2"><TfiEmail className="mt-1"/> flarefashion5@hotmail.com</p></Link>
+                    <Link href="mailto:flarefashion5@hotmail.com" className="hover:text-pink-400 ease-in-out duration-300"><div className="flex gap-2 justify-center"><TfiEmail className="mt-1"/> flarefashion5@hotmail.com</div></Link>
                 </li>
                 <li>
-                   <Link href="tel:780-807-6164" className="hover:underline"><p className="flex gap-2"><BsTelephone className="mt-1" /> (780) 807-6164</p></Link> 
+                   <Link href="tel:780-807-6164" className="hover:text-pink-400 ease-in-out duration-300"><div className="flex gap-2 justify-center"><BsTelephone className="mt-1" /> (780) 807-6164</div></Link> 
                 </li>
                 </ul>
             </div>
+                </div>
         </footer>
     )
 }
