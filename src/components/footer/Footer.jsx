@@ -11,7 +11,7 @@ export const Footer = () => {
             <div className="">
                 <Link href="/"><FooterLogo /></Link>
             </div>
-                <ul className="flex gap-3 p-5 pb-0 md:ml-[125px]">
+                <ul className="flex gap-3 p-5 pb-0 md:ml-[135px]">
                 <li>
                     <Link href="https://www.facebook.com/Flair.hijab" target="_blank">
                     <button id="facebook" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
