@@ -2,7 +2,9 @@ import Image from "next/image"
 
 const FooterLogo = (props) => (
 
-   <Image src="/logo-footer.png" width={300} height={300} alt="Flair Hijab" />
+   <div className="md:w-[300px] md:h-[200px] ">
+      <Image className="w-[200px] h-[200px]" src="/logo-footer.png" width={150} height={150} alt="Flair Hijab" />
+   </div>
     
     )
     

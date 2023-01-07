@@ -27,31 +27,40 @@
     
 "allProducts": [
     {
-        "id": "clothing-shalwar-2pc",
+        "id": "clothing-maissori-duppattay",
         "category": "Womens Clothing",
-        "title": "2pc Shalwar Kameez",
+        "title": "Maissori Duppattay",
         "price": "29.99",
-        "description": "2pc shalwar kameez",
-        "link": "facebook.com",
-        "image": "/products/clothes.jpg"
+        "description": "Maissori duppattay",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid02ThgHkJbRBABz7Fwj6LuyxUkGpUCtZYgBrw51i5wnM7ariDUGm2zzXL79PXhUDjFYl&show_text=true&width=500",
+        "image": "/products/maissori-duppattay.jpg"
     },
     {
-        "id": "clothing-shalwar-3pc",
+        "id": "clothing-khadi-net-duppatay",
         "category": "Womens Clothing",
-        "title": "3pc Shalwar Kameez",
+        "title": "Khadi Net Duppatay",
         "price": "39.99",
-        "description": "3pc shalwar kameez",
-        "link": "facebook.com",
-        "image": "/products/clothes.jpg"
+        "description": "Khadi Net Duppatay",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D555647739914348%26set%3Da.439792694833187%26type%3D3&show_text=true&width=500",
+        "image": "/products/khadi-net-duppattay.jpg"
     },
     {
-        "id": "clothing-kameez-1pc",
+        "id": "clothing-foil-work-duppatay",
         "category": "Womens Clothing",
-        "title": "1pc Kameez",
+        "title": "Foil Work Duppatay",
         "price": "19.99",
-        "description": "1pc kameez",
-        "link": "facebook.com",
-        "image": "/products/clothes.jpg"
+        "description": "Foil Work Duppatay",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid0s2aDxwWZQsfj9TiPDaYbsiUmFVC1n5RxCBuEATNZffDvGEwC6VWomEyj7dZpiHDnl&show_text=true&width=500",
+        "image": "/products/foil-work-duppattay.jpg"
+    },
+    {
+        "id": "clothing-chiffon-embroidered-duppatay",
+        "category": "Womens Clothing",
+        "title": "Chiffon Embroidered Duppatay",
+        "price": "19.99",
+        "description": "Chiffon Embroidered Duppatay",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid02KBwS63SL1uDcKPtmRSfu9nCN3CqNduxaMVhCNGJeztQL2aHYU2tAPkP2dfi1FSF6l&show_text=true&width=500",
+        "image": "/products/chiffon-embroidered-duppatay.jpg"
     },
     {
         "id": "jewelry-pakistani",
@@ -81,31 +90,31 @@
         "image": "/products/jewelry.jpg"
     },
     {
-        "id": "hijabs-chiffon",
+        "id": "hijabs-shimmer",
         "category": "Hijabs",
-        "title": "Chiffon Hijabs",
+        "title": "Shimmer Hijabs",
         "price": "29.99",
-        "description": "Chiffon Hijabs",
-        "link": "facebook.com",
-        "image": "/products/hijabs.jpg"
+        "description": "Shimmer Hijabs, all colours.",
+        "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid0bFPmVpUHWsgfr6wPC1cTKjkgLDyF7ctbPAm1orngPuM1b1FXn47eL2uo7CCUnH7ql&show_text=true&width=500",
+        "image": "/products/shimmer-hijab.jpg"
     },
     {
         "id": "hijabs-jersey",
         "category": "Hijabs",
-        "title": "Jersey Hijabs",
+        "title": "Double Stretch Jersey Hijabs",
         "price": "29.99",
-        "description": "Jersey Hijabs",
+        "description": "Double stretch jersey hijabs made in Qawait.",
         "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid0za4yUpyiTjnQjTtojAJAxA5XM5Vg396158mh1WZZYPiQhpoE1Rp5d8sHwNHPMCSRl&show_text=true&width=500",
-        "image": "/products/hijabs.jpg"
+        "image": "/products/double-stretch-jersey-hijab.jpg"
     },
     {
         "id": "hijabs-cotton",
         "category": "Hijabs",
-        "title": "Cotton Hijabs",
+        "title": "Rippled Cotton Hijabs",
         "price": "29.99",
-        "description": "Cotton Hijabs",
+        "description": "Rippled cotton hijabs.",
         "link": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FFlair.hijab%2Fposts%2Fpfbid02LuDBd2rN4uVVk99UxbtDKEKvqSiP8uTb7ze3S1VwjszvbZSp6iyWHQk2FxVBEb3Xl&show_text=true&width=500",
-        "image": "/products/hijabs.jpg"
+        "image": "/products/rippled-cotton-hijab.jpg"
     },
     {
         "id": "hijabs-accessories",
