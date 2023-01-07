@@ -7,13 +7,13 @@ import { FooterLogo } from '../icons/index.js'
 export const Footer = () => {
     return (
         <footer className="bg-gray-100 shadow-2xl">
-            <div className="px-5 flex flex-wrap justify-center sm:justify-evenly lg:justify-between items-center h-full md:h-[300px] mx-[80px] ">
+            <div className="px-5 flex flex-wrap justify-center sm:justify-evenly lg:justify-between items-center h-full mx-[80px] ">
             <div>
-                <Link href="/"><FooterLogo /></Link>
+                <Link  href="/"><FooterLogo /></Link>
             </div>
             <div>
-                <h3 className="text-center mt-[10px]">Connect With Us</h3>
-                <ul className="flex gap-3 p-5 pb-5 md:pb-0 border-t-2 border-black">
+                <h3 className="text-center mt-[10px] ">Connect With Us</h3>
+                <ul className="flex gap-3 p-5 pb-5  md:pb-0 border-t-2 border-black">
                 <li>
                     <Link href="https://www.facebook.com/Flair.hijab"  target="_blank">
                     <button aria-label="facebook" id="facebookb" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
@@ -36,8 +36,8 @@ export const Footer = () => {
                     </Link>
                 </li>
                 </ul>
-                </div>
-                <div className="px-5">
+            </div>
+            <div className="px-5">
                 <h3 className="text-center sm:pt-[40px] border-b-2 border-black ">Contact Us</h3>
                     <ul className="p-5 text-lg mt-[-10px]">
                 <li>
@@ -48,7 +48,7 @@ export const Footer = () => {
                 </li>
                 </ul>
             </div>
-                </div>
+            </div>
         </footer>
     )
 }
