@@ -1,38 +1,16 @@
-import { useEffect } from 'react';
 
-const ProductInCatPage = ({data}) => { 
-
-    useEffect(() => {
-    FB.XFBML.parse();
-    window.fbAsyncInit = function() {
-	    window.FB.init({
-	      appId      : 'Flair.hijab',
-	      cookie     : true,
-	      xfbml      : true, 
-	      version    : 'v15.0'
-	    });
-        
-    }});
-	
+const ProductInCatPage = ({data}) => {   
     return( 
-        <>
-        <div id="fb-root"></div>
         <main className='min-h-[550px]'>
-            <div className='flex flex-wrap justify-center p-5'>
-                <div className="p-3">
-                <div 
-                    className="fb-post" 
-                    data-width="450"
-                    data-href={data.link}>
+            <div className='flex flex-wrap justify-center px-5'>
+                <div className="w-[600px] p-3">
+                    <iframe src={data.link} className="w-full hover:border-black p-1 hover:border ease-in-out duration-300 rounded hover:scale-[98%]" width="100%" frameborder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
-            </div>
             </div> 
         </main>
-        </>
+        
     )
-      
 }
-
     
 
 export default ProductInCatPage;
