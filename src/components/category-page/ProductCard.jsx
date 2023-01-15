@@ -1,90 +1,65 @@
+import { useState, useEffect } from 'react'
+import { useCart } from '../context/CartContext'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
-import { formatCurrency } from '@/libs/utils';
-import { toast } from 'react-hot-toast';
 
-const ProductCard = props => {
-  const { cartCount, addItem } = useShoppingCart();
-  const [adding, setAdding] = useState(false);
+const Card = ({ price }) => {
+  const { items, addItem } = useCart()
+  const [error, setError] = useState('')
+  const { product, unit_amount } = price
 
-  const toastId = useRef();
-  const firstRun = useRef(true);
-
-  const handleOnAddToCart = event => {
-    event.preventDefault();
-
-    setAdding(true);
-    toastId.current = toast.loading('Adding 1 item...');
-
-    if (typeof props.onClickAdd === 'function') {
-      props.onClickAdd();
+  const addItemToCart = price => {
+    const found = items.find(p => p.id === price.id)
+    if (found) {
+      setError('Item has been added!')
+      return
     }
-
-    addItem(props);
-  };
+    addItem(price)
+  }
 
   useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      return;
-    }
-
-    if (adding) {
-      setAdding(false);
-      toast.success(`${props.title} added`, {
-        id: toastId.current,
-      });
-    }
-
-    if (typeof props.onAddEnded === 'function') {
-      props.onAddEnded();
-    }
-  }, [cartCount]);
+    const timeout = setTimeout(() => setError(''), 3000)
+    return () => clearTimeout(timeout)
+  }, [error])
 
   return (
-    <Link href={`/products/${props.category}/${props.id}`}>
-      <div className="border rounded-md p-6 group">
-        {/* Product's image */}
-        <div className="object-contain relative w-full h-64 group-hover:transform group-hover:scale-[110%] group-hover:ease-in-out group-hover:duration-500">
+    <div>
+      <div className='relative'>
+        <div className='relative w-full h-72 rounded-lg overflow-hidden'>
           <Image
-            src={props.image}
-            alt={props.title}
-            fill
+            src={product.images[0]}
+            alt={product.description}
+            className='object-scale-down'
+            layout='fill'
           />
         </div>
-
-        {/* Name + Rating */}
-        <div className="mt-4 sm:mt-8">
-          <p className="font-semibold text-lg capitalize">{props.title}</p>
+        <div className='relative mt-4'>
+          <h3 className='text-sm font-medium text-gray-900'>{product.name}</h3>
+          <p className='mt-1 text-sm text-gray-500'>{product.description}</p>
         </div>
-
-        {/* Price + CTA */}
-        <div className="mt-4 flex items-center justify-between space-x-2">
-          <div>
-            <p className="text-gray-500">Price</p>
-            <p className="text-lg font-semibold">
-              {formatCurrency(props.price, props.currency)}
-            </p>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleOnAddToCart}
-            disabled={adding || props.disabled}
-            className={`border rounded-lg py-1 px-4 hover:bg-rose-500 hover:border-rose-500 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-              adding
-                ? 'disabled:bg-rose-500 disabled:border-rose-500 disabled:text-white'
-                : 'disabled:hover:bg-transparent disabled:hover:text-current disabled:hover:border-gray-200'
-            }`}
-          >
-            {adding ? 'Adding...' : 'Add to cart'}
-          </button>
+        <div className='absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden'>
+          <div
+            aria-hidden='true'
+            className='absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50'
+          />
+          <p className='relative text-lg font-semibold text-white'>
+            {(unit_amount / 100).toLocaleString('en-CA', {
+              style: 'currency',
+              currency: 'CAD',
+            })}
+          </p>
         </div>
       </div>
-    </Link>
-  );
-};
-  
-  export default ProductCard;
+      <div className='mt-6'>
+        <button
+          onClick={() => addItemToCart(price)}
+          className='relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200'
+        >
+          Add to Cart<span className='sr-only'>, {product.name}</span>
+        </button>
+        {error && <p className='text-sm text-red-400'>{error}</p>}
+      </div>
+    </div>
+  )
+}
+
+export default Card
