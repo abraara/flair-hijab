@@ -2,12 +2,11 @@ import MobileMenuButton from "./MobileMenuButton";
 import NavBarBranding from "./NavBarBranding";
 import NavBarLinks from "./NavBarLinks";
 import { MdShoppingCart } from "react-icons/md";
-import { useShoppingCart } from "@/hooks/use-shopping-cart";
-import { formatCurrency } from "@/libs/utils";
+import { useCart } from "context/CartContext";
 import Link from "next/link";
 
 function NavBar() {
-    const { totalPrice, cartCount } = useShoppingCart();
+  const { items } = useCart()
     return ( 
         <nav className="text-black bg-white shadow fixed z-30 flex justify-between items-center w-full">
             <div>
@@ -21,10 +20,9 @@ function NavBar() {
                 <div className="relative">
                   <MdShoppingCart className="w-7 h-7 flex-shrink-0" />
                 </div>
-                <p className="text-lg">
-                  {formatCurrency(totalPrice)}{' '}
-                  <span className="text-sm text-gray-500">({cartCount})</span>
-                </p>
+                <span className='ml-2 text-sm font-medium text-gray-400 group-hover:text-gray-800'>
+                ( {items.length} )
+          </span>
               </Link>
                 <MobileMenuButton className="w-[100px]" />
             </div>

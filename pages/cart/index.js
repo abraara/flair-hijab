@@ -2,10 +2,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
+import { useCart } from 'context/CartContext';
 import axios from 'axios';
-import { formatCurrency } from '@/libs/utils';
+import { checkout } from 'lib/checkout';
 import getStripe from '@/libs/get-stripe';
+import { Dialog, Transition } from '@headlessui/react'
 import {
   XCircleIcon,
   XIcon,
@@ -13,136 +14,125 @@ import {
   PlusSmIcon,
 } from '@heroicons/react/outline';
 
-const Cart = () => {
-  const { cartDetails, totalPrice, cartCount, addItem, removeItem, clearCart } =
-    useShoppingCart();
-  const [redirecting, setRedirecting] = useState(false);
+export default function Cart() {
+  const { items, removeItem } = useCart()
+  const subTotal = items.reduce((acc, curr) => (acc += curr.unit_amount), 0)
 
-  const redirectToCheckout = async () => {
-    // Create Stripe checkout
-    const {
-      data: { id },
-    } = await axios.post('/api/checkout_sessions', {
-      items: Object.entries(cartDetails).map(([_, { id, quantity }]) => ({
-        price: id,
-        quantity,
-      })),
-    });
-
-    // Redirect to checkout
-    const stripe = await getStripe();
-    await stripe.redirectToCheckout({ sessionId: id });
-  };
+  const handleCheckout = event => {
+    event.preventDefault()
+    checkout(items)
+  }
 
   return (
     <>
-      <Head>
-        <title>Cart | Flair Hijab</title>
-      </Head>
-      <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
-        {cartCount > 0 ? (
-          <main>
-            <h2 className="text-4xl font-semibold">Your shopping cart</h2>
-            <p className="mt-1 text-xl">
-              {cartCount} items{' '}
-              <button
-                onClick={clearCart}
-                className="opacity-50 hover:opacity-100 text-base capitalize"
-              >
-                (Clear all)
-              </button>
-            </p>
-          </main>
-        ) : (
-          <main className='min-h-[455px]'>
-            <h2 className="text-4xl font-semibold">
-              Your shopping cart is empty.
-            </h2>
-            <p className="mt-1 text-xl">
-              Check out our collection{' '}
-              <Link href="/" className="text-red-500 underline">here!
-              </Link>
-            </p>
-          </main>
-        )}
+        <Dialog.Panel className='pointer-events-auto w-screen max-w-md'>
+                  <div className='flex h-full flex-col overflow-y-scroll bg-white shadow-xl'>
+                    <div className='flex-1 overflow-y-auto py-6 px-4 sm:px-6'>
+                      <div className='flex items-start justify-between'>
+                        <Dialog.Title className='text-lg font-medium text-gray-900'>
+                          {' '}
+                          Shopping cart{' '}
+                        </Dialog.Title>
+                        <div className='ml-3 flex h-7 items-center'>
+                          <button
+                            type='button'
+                            className='-m-2 p-2 text-gray-400 hover:text-gray-500'
+                            onClick={() => setCartSliderIsOpen(false)}
+                          >
+                            <span className='sr-only'>Close panel</span>
+                            <XIcon className='h-6 w-6' aria-hidden='true' />
+                          </button>
+                        </div>
+                      </div>
 
-        {cartCount > 0 ? (
-          <div className="mt-12">
-            {Object.entries(cartDetails).map(([key, product]) => (
-              <div
-                key={key}
-                className="flex justify-between space-x-4 hover:shadow-lg hover:border-opacity-50 border border-opacity-0 rounded-md p-4"
-              >
-                {/* Image + Name */}
-                <Link href={`/products/${product.id}`} className="flex items-center space-x-4 group">
-                    <div className="object-contain relative w-20 h-20 group-hover:scale-110 transition-transform">
-                      <Image
-                        src={product.image}
-                        alt={product.title}
-                        fill="fill"
-                      />
+                      <div className='mt-8'>
+                        <div className='flow-root'>
+                          <ul role='list' className='-my-6 divide-y divide-gray-200'>
+                            {items.map(price => (
+                              <li key={price.id} className='flex py-6'>
+                                <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
+                                  <img
+                                    src={price.product.images[0]}
+                                    alt={price.product.description}
+                                    className='h-full w-full object-cover object-center'
+                                  />
+                                </div>
+
+                                <div className='ml-4 flex flex-1 flex-col'>
+                                  <div>
+                                    <div className='flex justify-between text-base font-medium text-gray-900'>
+                                      <h3>
+                                        <a href={price.product.href}> {price.product.name} </a>
+                                      </h3>
+                                      <p className='ml-4'>
+                                        {(price.unit_amount / 100).toLocaleString('en-CA', {
+                                          style: 'currency',
+                                          currency: 'CAD',
+                                        })}
+                                      </p>
+                                    </div>
+                                    <p className='mt-1 text-sm text-gray-500'>
+                                      {price.product.description}
+                                    </p>
+                                  </div>
+                                  <div className='flex flex-1 items-end justify-between text-sm'>
+                                    <p className='text-gray-500'>Qty 1</p>
+
+                                    <div className='flex'>
+                                      <button
+                                        type='button'
+                                        onClick={() => removeItem(price.id)}
+                                        className='font-medium text-rose-400 hover:text-rose-300'
+                                      >
+                                        Remove
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    <p className="font-semibold text-xl group-hover:underline">
-                      {product.title}
-                    </p>
-                </Link>
 
-                {/* Price + Actions */}
-                <div className="flex items-center">
-                  {/* Quantity */}
-                  <div className="flex items-center space-x-3">
-                    <button
-                      onClick={() => removeItem(product)}
-                      disabled={product?.quantity <= 1}
-                      className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-rose-100 hover:text-rose-500 rounded-md p-1"
-                    >
-                      <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
-                    </button>
-                    <p className="font-semibold text-xl">{product.quantity}</p>
-                    <button
-                      onClick={() => addItem(product)}
-                      className="hover:bg-green-100 hover:text-green-500 rounded-md p-1"
-                    >
-                      <PlusSmIcon className="w-6 h-6 flex-shrink-0 " />
-                    </button>
+                    <div className='border-t border-gray-200 py-6 px-4 sm:px-6'>
+                      <div className='flex justify-between text-base font-medium text-gray-900'>
+                        <p>Subtotal</p>
+                        <p>
+                          {(subTotal / 100).toLocaleString('en-CA', {
+                            style: 'currency',
+                            currency: 'CAD',
+                          })}
+                        </p>
+                      </div>
+                      <p className='mt-0.5 text-sm text-gray-500'>
+                        Shipping and taxes calculated at checkout.
+                      </p>
+                      <div className='mt-6'>
+                        <a
+                          href='#'
+                          onClick={handleCheckout}
+                          className='flex items-center justify-center rounded-md border border-transparent bg-emerald-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-emerald-700'
+                        >
+                          Checkout
+                        </a>
+                      </div>
+                      <div className='mt-6 flex justify-center text-center text-sm text-gray-500'>
+                        <p>
+                          or{' '}
+                          <button
+                            type='button'
+                            className='font-medium text-emerald-600 hover:text-emerald-500'
+                            onClick={() => setCartSliderIsOpen(false)}
+                          >
+                            Continue Shopping<span aria-hidden='true'> &rarr;</span>
+                          </button>
+                        </p>
+                      </div>
+                    </div>
                   </div>
-
-                  <p className="font-semibold text-xl ml-16">
-                    <XIcon className="w-4 h-4 text-gray-500 inline-block" />
-                    {formatCurrency(product.price)}
-                  </p>
-
-                  <button
-                    onClick={() => removeItem(product, product.quantity)}
-                    className="ml-4 hover:text-rose-500"
-                  >
-                    <XCircleIcon className="w-6 h-6 flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity" />
-                  </button>
-                </div>
-              </div>
-            ))}
-
-            <div className="flex flex-col items-end border-t py-4 mt-8">
-              <p className="text-xl">
-                Total:{' '}
-                <span className="font-semibold">
-                  {formatCurrency(totalPrice)}
-                </span>
-              </p>
-
-              <button
-                onClick={redirectToCheckout}
-                disabled={redirecting}
-                className="border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"
-              >
-                {redirecting ? 'Redirecting...' : 'Go to Checkout'}
-              </button>
-            </div>
-          </div>
-        ) : null}
-      </div>
+                </Dialog.Panel>
     </>
   );
 };
-
-export default Cart;
