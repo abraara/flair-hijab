@@ -1,29 +1,28 @@
-import ProductCard from '@/src/components/category-page/ProductCard';
-import { useState } from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
 
-
-export default function Home({data, pageName}) {
-  const [disabled, setDisabled] = useState(false);
-
-  return (
-    <main>
-      <h2 className = "pt-4 lg:pt-8 mb-4 text-4xl tracking-tight font-extrabold text-center">{pageName}</h2>
-    <div className="container xl:max-w-screen-xl mx-auto pb-12 px-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {data.map(pr => (
-          <ProductCard
-            key={pr.id}
-            disabled={disabled}
-            onClickAdd ={() => setDisabled(true)}
-            onAddEnded={() => setDisabled(false)}
-            {...pr}
-          />
-        ))}
-      </div>
-    </div>
-    </main>
-  );
+const ProductsCatPage = ({data, pageName}) => {
+    return( 
+        <main>
+        <div>
+        <h1 className='first-letter:uppercase pt-4 lg:pt-8 mb-4 text-4xl tracking-tight font-extrabold text-center'>{pageName}</h1>  
+        <div className='pt-6 md:columns-2 lg:columns-4 md:gap-0'>
+            <div className='flex flex-wrap justify-center pb-6 gap-3 px-4 md:px-0'>
+                {data.map((pr) => (
+                <Link className='ease-in-out duration-300 rounded hover:scale-[98%]' key={pr.id} href={`/products/${pr.category}/${pr.id}`}>
+                <Image className='hover:border-black p-1 hover:border ease-in-out duration-300 object-cover h-[350px] sm:h-[400px] w-[680px] sm:w-[370px]' alt={pr.title} width="350" height="350" src={pr.image}/> 
+                <h2 className='p-4 text-xl text-center uppercase font-bold'>{pr.title}</h2>
+                </Link>
+                ))}
+            </div>
+         </div>
+         </div>
+         </main>
+    )
 }
+
+export default ProductsCatPage;
+
 export async function getStaticPaths() {
     const {products_categories} = await import('/data/data.json');
     const allPaths = products_categories.map((pr) => {
