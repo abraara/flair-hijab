@@ -37,7 +37,7 @@ const Cart = () => {
   return (
     <>
       <Head>
-        <title>My Shopping Cart | AlterClass</title>
+        <title>Cart | Flair Hijab</title>
       </Head>
       <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
         {cartCount > 0 ? (
@@ -54,15 +54,15 @@ const Cart = () => {
             </p>
           </>
         ) : (
-          <>
+          <main className='min-h-[455px]'>
             <h2 className="text-4xl font-semibold">
               Your shopping cart is empty.
             </h2>
             <p className="mt-1 text-xl">
-              Check out our awesome plants{' '}
+              Browse our collection{' '}
               <Link href="/" className="text-red-500 underline">here!</Link>
             </p>
-          </>
+          </main>
         )}
 
         {cartCount > 0 ? (
@@ -77,13 +77,13 @@ const Cart = () => {
                     <div className="relative w-20 h-20 group-hover:scale-110 transition-transform">
                       <Image
                         src={data.image}
-                        alt={data.name}
+                        alt={data.title}
                         layout="fill"
                         objectFit="contain"
                       />
                     </div>
                     <p className="font-semibold text-xl group-hover:underline">
-                      {data.name}
+                      {data.title}
                     </p>
                   </Link>
 

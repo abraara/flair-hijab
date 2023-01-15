@@ -39,7 +39,6 @@ const ContactPage = () => {
   };
 
   return (
-    
 <main>
   <div className="py-4 lg:py-8 px-8 md:px-2 mx-auto max-w-screen-md">
       <h2 className = "mb-4 text-4xl tracking-tight font-extrabold text-center">Get In Touch</h2>
