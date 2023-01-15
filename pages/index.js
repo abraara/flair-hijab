@@ -1,19 +1,19 @@
 import { HomePage } from '@/src/components/home/HomePage';
 
-export default function Home({data}) {
+export default function Home({product_categories}) {
   return (
     <>
-      <HomePage data={data}/>
+      <HomePage product_categories={product_categories}/>
 
     </>
   )
 }
 
-export async function getStaticProps() {
-  const {products_categories} = await import('/data/data.json');
-    return {
-        props:{
-            data: products_categories,
-        },
-    };
-}
+// export async function getStaticProps() {
+//   const {products_categories} = await import('product_categories');
+//     return {
+//         props:{
+//             data: products_categories,
+//         },
+//     };
+// }

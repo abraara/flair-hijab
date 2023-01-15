@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import useLocalStorageReducer from './use-local-storage-reducer';
 
 // Reducers
@@ -95,7 +95,7 @@ const cartReducer = (state = {}, action) => {
 // Context + Provider
 const CartContext = React.createContext();
 
-export const CartProvider = ({ currency = 'USD', children = null }) => {
+export const CartProvider = ({ currency = 'CAD', children = null }) => {
   const [cart, dispatch] = useLocalStorageReducer(
     'cart',
     cartReducer,

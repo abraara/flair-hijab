@@ -2,18 +2,19 @@ import ProductCard from '@/src/components/category-page/ProductCard';
 import { useState } from 'react';
 
 
-export default function Home({data}) {
+export default function Home({data, pageName}) {
   const [disabled, setDisabled] = useState(false);
 
   return (
     <main>
-    <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
+      <h2 className = "pt-4 lg:pt-8 mb-4 text-4xl tracking-tight font-extrabold text-center">{pageName}</h2>
+    <div className="container xl:max-w-screen-xl mx-auto pb-12 px-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {data.map(pr => (
           <ProductCard
             key={pr.id}
             disabled={disabled}
-            onClickAdd={() => setDisabled(true)}
+            onClickAdd ={() => setDisabled(true)}
             onAddEnded={() => setDisabled(false)}
             {...pr}
           />
