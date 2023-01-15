@@ -1,4 +1,4 @@
-import { ProductPage } from '../../src/components/product-page/ProductPage';
+import { ProductPage } from '@/src/components/product-page/ProductPage';
 
 export default function Products ({data}) {
     return(
