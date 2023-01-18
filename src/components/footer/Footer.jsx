@@ -17,7 +17,7 @@ export const Footer = () => {
                 <h3 className="text-center mt-[8px] font-serif">Connect With Us</h3>
                 <div className="w-8 bg-black h-[2px] mt-5 px-5 ml-2 float-right"></div>
                 </div>
-                <ul className="flex justify-center gap-3 p-5 pb-5 ml-4  md:pb-0">
+                <ul className="flex justify-center gap-3 p-5 pb-5 md:pb-0">
                 <li>
                     <Link href="https://www.facebook.com/Flair.hijab"  target="_blank">
                     <button aria-label="facebook" id="facebookb" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
