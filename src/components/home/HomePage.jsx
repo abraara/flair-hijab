@@ -19,7 +19,11 @@ export const HomePage = ({data}) => {
         </figcaption>
     </figure>
 </header>
-     
+<div className='flex justify-center items-center pt-5'>
+        <div className="w-8 sm:w-[100px] bg-black h-[2px] px-5 mr-4"></div>
+            <h2 className="text-4xl tracking-tight font-serif text-center">Our Collection</h2>
+        <div className="w-8 sm:w-[100px] bg-black h-[2px] px-5 ml-4"></div>
+        </div>
 <main className='pt-6 md:columns-2 xl:columns-4 md:gap-0'>
     <div className='flex flex-wrap justify-center pb-6 gap-3 px-4 md:px-0'>
         {data.map((pr) => ( <Link className='relative hover:scale-[98%] hover:border-black p-1 hover:border ease-in-out duration-300' key={pr.id} href={`/products/${pr.id}`}><Image className="object-top object-cover h-[300px] sm:h-[250px] w-[600px] sm:w-[365px]" alt={pr.title} width={600} height={250} src={pr.image}/><h2 className='text-3xl no-underline hover:underline text-white text-center font-bold uppercase w-[300px] absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] drop-shadow-xl'>{pr.title}</h2></Link>))}

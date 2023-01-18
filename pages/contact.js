@@ -40,8 +40,12 @@ const ContactPage = () => {
 
   return (
 <main>
-  <div className="py-4 lg:py-8 px-8 md:px-2 mx-auto max-w-screen-md">
-      <h2 className = "mb-4 text-4xl tracking-tight font-extrabold text-center">Get In Touch</h2>
+  <div className="py-4 lg:py-8 px-8 md:px-2 mx-auto max-w-screen-md font-serif">
+  <div className='flex justify-center items-center pb-5'>
+        <div className="w-8 sm:w-[100px] bg-black h-[2px] px-5 mr-4"></div>
+            <h2 className="text-4xl tracking-tight text-center">Get in Touch</h2>
+        <div className="w-8 sm:w-[100px] bg-black h-[2px] px-5 ml-4"></div>
+        </div>
       <p className = " mb-5 lg:mb-8 font-light text-center text-gray-500 sm:text-xl">Any pricing questions? Want to send feedback about any of our products? Need more details about a certain item? Let us know.</p>
       <form ref={form} onSubmit={sendEmail} className="space-y-8">
             <div>
