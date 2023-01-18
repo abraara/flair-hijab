@@ -7,17 +7,17 @@ import { FooterLogo } from '../icons/index.js'
 export const Footer = () => {
     return (
         <footer className="bg-gray-100 shadow-2xl">
-            <div className="px-5 flex flex-wrap justify-center sm:justify-evenly lg:justify-between items-center h-full mx-[80px] ">
-            <div>
+            <div className="px-5 flex flex-wrap justify-center sm:justify-evenly lg:justify-between items-center h-full mx-[40px] sm:mx-[80px] ">
+            <div className="mr-2">
                 <Link  href="/"><FooterLogo /></Link>
             </div>
-            <div className="ml-5 md:ml-0">
-                <div className="flex">
+            <div>
+                <div className="flex justify-center">
                 <div className="w-8 bg-black h-[2px] px-5 mt-5 mr-2"></div>
                 <h3 className="text-center mt-[8px] font-serif">Connect With Us</h3>
                 <div className="w-8 bg-black h-[2px] mt-5 px-5 ml-2 float-right"></div>
                 </div>
-                <ul className="flex gap-3 p-5 pb-5 ml-4  md:pb-0">
+                <ul className="flex justify-center gap-3 p-5 pb-5 ml-4  md:pb-0">
                 <li>
                     <Link href="https://www.facebook.com/Flair.hijab"  target="_blank">
                     <button aria-label="facebook" id="facebookb" className="bg-white sticky duration-500 border-2 border-blue-600 w-10 transform hover:-translate-y-3 h-10 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 " > 
@@ -42,12 +42,12 @@ export const Footer = () => {
                 </ul>
             </div>
             <div className="font-serif">
-                <div className="flex ml-[55px] md:mt-[30px]">
+                <div className="flex justify-center md:mt-[30px]">
             <div className="w-[60px] bg-black h-[2px] mt-5 mr-2"></div>
             <h3 className="text-center mt-[8px]">Contact Us</h3>
                 <div className="w-[60px] bg-black h-[2px] mt-5 ml-2 float-right"></div>
                 </div>
-                    <ul className="p-5 text-lg mt-[-10px] ml-4">
+                    <ul className="p-5 text-lg mt-[-10px]">
                 <li>
                     <Link href="mailto:flarefashion5@hotmail.com" className="hover:text-pink-400 ease-in-out duration-300"><div className="flex gap-2 justify-center"><TfiEmail className="mt-1"/> flarefashion5@hotmail.com</div></Link>
                 </li>
