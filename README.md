@@ -4,7 +4,7 @@
  <br/>
 
 ##  Functionality
-A full website consisting of a search bar, emailing system, shopping cart and payment option through Stripe, live links to all products in store, social media and contact info.
+A full website consisting of a search bar, emailing system, shopping cart and payment option through Stripe, live links to all products in store, fully responsive sliding sidebar, social media and contact info.
 
  <br/>
 
