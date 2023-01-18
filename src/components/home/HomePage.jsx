@@ -8,7 +8,7 @@ export const HomePage = ({data}) => {
     
     <figure className='float-left'>
         <figcaption className="text-black text-center w-11/12 lg:w-full mt-[200px] px-5 sm:w-[400px] md:ml-[80px]">
-            <h1 className='text-5xl font-semibold md:text-6xl xl:text-7xl border-b-2 border-black pb-5 font-serif'>
+            <h1 className='text-5xl font-thin md:text-6xl xl:text-7xl border-b-2 border-black pb-5 font-serif'>
                  Flair Hijab<span className="block text-2xl sm:text-3xl"> Modesty in Fashion</span>
             </h1>
             <Link className='font-light font-bold mr-5 md:mr-0' href='/products'>

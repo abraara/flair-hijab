@@ -16,15 +16,15 @@ const ProductCard = props => {
 
         {/* Name + Rating */}
         <div className="mt-4 sm:mt-8">
-          <p className="font-semibold text-lg capitalize">{props.title}</p>
+          <p className="text-md capitalize font-serif">{props.title}</p>
         </div>
 
         {/* Price + CTA */}
-        <div className="mt-4 flex items-center justify-between space-x-2">
+        <div className="mt-3 flex items-center justify-between space-x-2">
           <div>
             <p className="text-gray-500">Price</p>
-            <p className="text-lg font-semibold">
-              {props.price}
+            <p className="text-lg">
+              $ {props.price}
             </p>
           </div>
 
