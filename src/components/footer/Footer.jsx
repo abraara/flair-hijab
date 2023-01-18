@@ -41,11 +41,11 @@ export const Footer = () => {
                 </li>
                 </ul>
             </div>
-            <div className="w-[300px] font-serif">
+            <div className="font-serif">
                 <div className="flex ml-[55px] md:mt-[30px]">
-            <div className="w-[60px] bg-black h-[2.5px] mt-5 mr-2"></div>
+            <div className="w-[60px] bg-black h-[2px] mt-5 mr-2"></div>
             <h3 className="text-center mt-[8px]">Contact Us</h3>
-                <div className="w-[60px] bg-black h-[2.5px] mt-5 ml-2 float-right"></div>
+                <div className="w-[60px] bg-black h-[2px] mt-5 ml-2 float-right"></div>
                 </div>
                     <ul className="p-5 text-lg mt-[-10px] ml-4">
                 <li>
