@@ -6,9 +6,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./ui/**/*.{js,ts,jsx,tsx}",
-    './src/**/*.{html,js}', 
-    './node_modules/tw-elements/dist/js/**/*.js'
-
+    './src/**/*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
     extend: {
@@ -19,4 +17,8 @@ module.exports = {
     require("flowbite/plugin"),
     require('tw-elements/dist/plugin')
   ],
+  scripts: [
+    "src/assets/tailwind-elements.js",
+    "node_modules/tw-elements/dist/js/index.min.js"
+ ]
 }

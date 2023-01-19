@@ -1,13 +1,15 @@
 const productsArray = [
     {
-        id: "price_1LnUTFDM1jwCEz8OGoOSXiSM",
-        title: "Coffee",
-        price: 4.99
+        id: "price_1MQQCdBtzMyB8huH7A82IDl3",
+        title: "Rippled Cotton Hijabs",
+        price: 29.99,
+        image: "/products/rippled-cotton-hijab.jpg"
     },
     {
-        id: "price_1LnUTxDM1jwCEz8OAqHYTwKQ",
-        title: "Sunglasses",
-        price: 9.99
+        id: "price_1MQQBWBtzMyB8huH38Qi7GDt",
+        title: "Hijab Accessories",
+        price: 39.99,
+        image: "/products/hijabs.jpg"
     },
     {
         id: "price_1MQQAsBtzMyB8huHu5QSWSaw",
@@ -18,7 +20,7 @@ const productsArray = [
 ];
 
 function getProductData(id) {
-    let productData = productsArray.find(product => product.id === id);
+    const productData = productsArray.find(product => product.id === id);
 
     if (productData == undefined) {
         console.log("Product data does not exist for ID: " + id);
