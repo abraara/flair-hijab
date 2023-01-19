@@ -11,6 +11,21 @@ function NavBar() {
     const cart = useContext(CartContext);
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
+    const checkout = async () => {
+        const lineItems = cart.items?.map( p => {
+            return {
+                price: p.id,
+                quantity: p.quantity
+            }
+        })
+    const res = await fetch('/api/checkout', {
+        method: 'POST',
+        body: JSON.stringify({lineItems: lineItems})
+    });
+
+    const b = await res.json();
+    window.location.href = b.session.url;
+    }
     return ( 
         <>
         <nav className="text-black bg-white shadow fixed z-30 flex justify-between items-center w-full">
@@ -61,9 +76,9 @@ function NavBar() {
 
                             <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
 
-                            <nutton type="button" variant="success">
+                            <button type="button" variant="success" onClick={checkout} >
                                 Purchase items!
-                            </nutton>
+                            </button>
                         </>
                     :
                         <h1>There are no items in your cart!</h1>
