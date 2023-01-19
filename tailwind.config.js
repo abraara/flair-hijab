@@ -6,6 +6,8 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./ui/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.{html,js}', 
+    './node_modules/tw-elements/dist/js/**/*.js'
 
   ],
   theme: {
@@ -14,6 +16,7 @@ module.exports = {
     },
   },
   plugins: [ 
-    require("flowbite/plugin")
+    require("flowbite/plugin"),
+    require('tw-elements/dist/plugin')
   ],
 }
