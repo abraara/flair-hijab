@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import ProductCard from '@/src/components/product-card/ProductCard';
+import ProductCard from '../../../src/components/product-card/ProductCard';
 
 
 export default function Home({data, pageName}) {
-  const [disabled, setDisabled] = useState(false);
 
   return (
     <main>
@@ -19,9 +17,6 @@ export default function Home({data, pageName}) {
         {data.map((product,pr) => (
           <ProductCard product={product}
             key={pr.id}
-            disabled={disabled}
-            onClickAdd={() => setDisabled(true)}
-            onAddEnded={() => setDisabled(false)}
             {...pr}
           />
         ))}

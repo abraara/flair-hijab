@@ -76,7 +76,7 @@ function NavBar() {
 
                             <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
 
-                            <button type="button" variant="success" onClick={checkout} >
+                            <button className="border" variant="success" onClick={checkout} >
                                 Purchase items!
                             </button>
                         </>

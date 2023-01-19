@@ -2,7 +2,7 @@ import MainLayout from '../src/components/layout/MainLayout';
 import '../styles/globals.css';
 import Head from 'next/head';
 import Script from 'next/script';
-import CartProvider from '@/src/components/CartContext';
+import CartProvider from '../src/components/CartContext';
 import { useEffect } from 'react';
 
 
