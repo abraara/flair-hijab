@@ -24,7 +24,8 @@ function NavBar() {
     });
 
     const b = await res.json();
-    window.location.href = b.session.url;
+    console.log(b.session.url);
+    location.replace(b.session.url);
     }
     return ( 
         <>
