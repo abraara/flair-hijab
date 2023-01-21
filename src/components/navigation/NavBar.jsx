@@ -70,7 +70,7 @@ function NavBar() {
       <div className="modal-body relative p-1">
       {productsCount > 0 ?
                         <>
-                            <p className="text-2xl mb-8 px-4"><span className="font-serif">Total items:</span> {productsCount}</p>
+                            <p className="text-2xl mb-4 px-4 mt-4"><span className="font-serif">Total items:</span> {productsCount}</p>
                             {cart.items.map( (currentProduct, idx) => (
                                   <CartProduct key={idx} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                             ))}
