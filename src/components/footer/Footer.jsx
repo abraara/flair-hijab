@@ -8,10 +8,10 @@ export const Footer = () => {
     return (
         <footer className="bg-gray-100 shadow-2xl">
             <div className="px-5 flex flex-wrap justify-center sm:justify-evenly lg:justify-between items-center h-full mx-[40px] sm:mx-[80px] ">
-            <div className="mr-2">
+            <div className="mr-3">
                 <Link  href="/"><FooterLogo /></Link>
             </div>
-            <div>
+            <div className="md:mr-5">
                 <div className="flex justify-center">
                 <div className="w-8 bg-black h-[2px] px-5 mt-5 mr-2"></div>
                 <h3 className="text-center mt-[8px] font-serif">Connect With Us</h3>

@@ -31,7 +31,7 @@ export default async function handler(
   });
 
   const session = await stripe.checkout.sessions.create({
-    success_url: "https://flair-hijab.vercel.app/success",
+    success_url: "https://flair-hijab.vercel.app/success?sessionId={CHECKOUT_SESSION_ID}",
     cancel_url: "https://flair-hijab.vercel.app/cancel",
     line_items: body.lineItems,
     mode: 'payment'
