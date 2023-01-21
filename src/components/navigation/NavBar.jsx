@@ -85,7 +85,7 @@ function NavBar() {
                         </>
                     :
                         <>
-                        <div className="py-4">
+                        <div className="p-4">
                         <h1 className="text-2xl">There are no items in your cart!</h1>
                         <p className="flex">Click the <span>              
                         <svg className="px-1 mt-[5px]"
