@@ -14,7 +14,7 @@ const CartProduct = props => {
         <>
         <div className='flex space-x-4 hover:shadow-lg hover:border hover:border-opacity-50 border-b rounded-md p-4 h-[110px] w-full'>
         <Image className='object-cover h-[80px] w-[60px]' src={productData.image} alt={productData.title} width={60} height={80}></Image>
-            <h3 className='w-[200px] text-[10px] sm:text-[15px] font-serif overflow-auto'>{productData.title}</h3>
+            <h3 className='w-[200px] text-[10px] sm:text-[15px] font-serif overflow-auto m-auto'>{productData.title}</h3>
             <div className='flex justify-end items-center space-x-2 group'>
             <form className='flex flex-wrap mr-2'>
                 <div className='ml-2 flex justify-end'>
