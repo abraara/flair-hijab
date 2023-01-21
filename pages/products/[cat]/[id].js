@@ -1,11 +1,11 @@
+import ProductCatCard from '../../../src/components/product-card/ProductCatCard';
 
 const ProductInCatPage = ({data}) => {   
     return( 
         <main className='min-h-[550px]'>
-            <div className='flex flex-wrap justify-center px-5'>
-                <div className="w-[600px] p-3">
-                    <iframe src={data.link} className="w-full h-[600px] hover:border-black p-1 hover:border ease-in-out duration-300 rounded hover:scale-[98%]" width="100%" frameborder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                </div>
+            <div className='container lg:max-w-screen-lg mx-auto py-12 px-6'>
+          <ProductCatCard product={data}
+          />
             </div> 
         </main>
         

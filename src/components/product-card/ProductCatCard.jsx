@@ -1,44 +1,50 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { CartContext } from '../CartContext';
 import { useContext } from 'react';
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-const ProductCard = props => {
+const ProductCatCard = props => {
     const product = props.product;
     const cart = useContext(CartContext);
     const productQuantity = cart.getProductQuantity(product.id);
     
     return( 
-      <div className="border p-4 group">
-        <Link href={`/products/${product.category}/${product.id}`} >
+      <div className="flex flex-col md:flex-row md:ml-20 items-center space-y-8 md:space-y-0 md:space-x-12">
         {/* Product's image */}
-        <div className="relative w-full h-64 group-hover:transform group-hover:scale-[105%] group-hover:ease-in-out group-hover:duration-500">
+        <div className="relative w-full sm:w-96 h-80 sm:h-96">
           <Image
-            className='object-cover'
+            className='object-cover rounded-md'
             src={product.image}
             alt={product.title}
             fill="fill"
           />
         </div>
 
-        {/* Name + Rating */}
-        <div className="mt-4 sm:mt-8">
-          <p className="text-md capitalize font-serif">{product.title}</p>
+        <div className="flex-1 max-w border border-opacity-50 rounded-md shadow-lg p-6 pt-4 w-full sm:h-fit lg:h-96">
+          <h2 className="text-2xl capitalize font-serif">{product.title}</h2>
+          <p className='font-serif'>
+          <span className="text-gray-500">Availability:</span>{' '}
+              <span className="font-semibold">In stock</span>
+          </p>
+
+          <div className="mt-4 border-t pb-6 pt-4">
+            <p className="text-gray-500 font-serif">
+              {product.description}
+            </p>
         </div>
-        </Link>
-        {/* Price + CTA */}
-        <div className="mt-3 flex items-center justify-between space-x-2">
-          <div>
+
+        <div className="mt-5 border-t border-b py-4">
             <p className="text-gray-500 font-serif">Price</p>
-            <p className="text-lg">
+            <p className="text-xl font-semibold">
               $ {product.price} CAD
             </p>
-          </div>
+        </div>
+
+        <div className='mt-12 pb-2'>
           { productQuantity > 0 ?
             <>
-              <form className='flex flex-wrap'>
-                <div className='ml-2 flex'>
+              <form className='flex flex-wrap justify-center mr-5 text-2xl '>
+                <div className='ml-2 flex '>
                   <button type='button' onClick={() => cart.removeOneFromCart(product.id)}  className='px-2 hover:bg-rose-100 hover:text-rose-500 rounded-md'><AiOutlineMinus/></button>
                   <label column="true" className='mx-1 font-semibold'><span className='font-serif font-normal'>In Cart:</span> {productQuantity}</label>
                   <button type='button' onClick={() => cart.addOneToCart(product.id)} className='px-2 hover:bg-green-100 hover:text-green-500 rounded-md'><AiOutlinePlus/></button>
@@ -48,7 +54,7 @@ const ProductCard = props => {
             :
             <button
             type="button"
-            className={`py-2 px-5 font-medium text-center text-zinc-600 rounded-lg bg-rose-200 border border-rose-200 sm:w-fit hover:bg-rose-400 focus:ring-4 focus:outline-none focus:ring-rose-300 hover:text-white ease-in-out duration-300 disabled:opacity-50 disabled:cursor-not-allowed font-serif`}
+            className={`py-2 px-5 block w-full font-medium text-center text-zinc-600 rounded-lg bg-rose-200 border border-rose-200 hover:bg-rose-400 focus:ring-4 focus:outline-none focus:ring-rose-300 hover:text-white ease-in-out duration-300 font-serif`}
             onClick={() => cart.addOneToCart(product.id)}
           >Add to Cart
           </button>
@@ -56,7 +62,8 @@ const ProductCard = props => {
 
         </div>
       </div>
+      </div>
     )
 }
 
-export default ProductCard;
+export default ProductCatCard;

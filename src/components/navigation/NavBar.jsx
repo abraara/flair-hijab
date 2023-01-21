@@ -52,7 +52,7 @@ function NavBar() {
             </div>
         </nav>
         
-        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto font-serif"
   id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog relative w-auto pointer-events-none">
@@ -82,11 +82,20 @@ function NavBar() {
                             </button>
                         </>
                     :
-                        <h1>There are no items in your cart!</h1>
+                        <>
+                        <div className="py-4">
+                        <h1 className="text-2xl">There are no items in your cart!</h1>
+                        <p className="flex">Click the <span>              
+                        <svg className="px-1 mt-[5px]"
+                         stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="15" width="full" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="grey" stroke-width="2" d="M3,3 L21,21 M3,21 L21,3"></path></svg>
+                         </span> to go back to shopping.</p>
+                         </div>
+                        </>
+                        
                     }
       </div>
       <div
-        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-gray-200 rounded-b-md">
       </div>
     </div>
   </div>
