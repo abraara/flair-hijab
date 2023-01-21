@@ -67,14 +67,14 @@ function NavBar() {
           className="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
           data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div className="modal-body relative p-4">
+      <div className="modal-body relative p-1">
       {productsCount > 0 ?
                         <>
-                            <p className="text-2xl mb-8"><span className="font-serif">Total items:</span> {productsCount}</p>
+                            <p className="text-2xl mb-8 px-4"><span className="font-serif">Total items:</span> {productsCount}</p>
                             {cart.items.map( (currentProduct, idx) => (
                                   <CartProduct key={idx} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                             ))}
-                            <div className="float-right">
+                            <div className="float-right p-2">
                             <h1 className="p-4"><span className="font-serif">Total:</span> ${cart.getTotalCost().toFixed(2)} CAD</h1>
                             <div className="mb-2">
                                 <div className="mr-1">
