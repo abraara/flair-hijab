@@ -10,6 +10,7 @@ const ProductCard = props => {
     const productQuantity = cart.getProductQuantity(product.id);
     
     return( 
+      <>
       <div className="border p-4 group">
         <Link href={`/products/${product.category}/${product.id}`} >
         {/* Product's image */}
@@ -39,9 +40,9 @@ const ProductCard = props => {
             <>
               <form className='flex flex-wrap'>
                 <div className='ml-2 flex'>
-                  <button type='button' onClick={() => cart.removeOneFromCart(product.id)}  className='px-2 hover:bg-rose-100 hover:text-rose-500 rounded-md'><AiOutlineMinus/></button>
+                <button type='button' onClick={() => cart.removeOneFromCart(product.id)}  className='px-2 hover:bg-rose-100 active:bg-rose-300 active:text-rose-700 hover:ease-in-out duration-300 hover:text-rose-500 rounded-md'><AiOutlineMinus/></button>
                   <label column="true" className='mx-1 font-semibold'><span className='font-serif font-normal'>In Cart:</span> {productQuantity}</label>
-                  <button type='button' onClick={() => cart.addOneToCart(product.id)} className='px-2 hover:bg-green-100 hover:text-green-500 rounded-md'><AiOutlinePlus/></button>
+                  <button type='button' onClick={() => cart.addOneToCart(product.id)} className='px-2 hover:bg-green-100 active:bg-green-300 active:text-green-700 hover:ease-in-out duration-300 hover:text-green-500 rounded-md'><AiOutlinePlus/></button>
                 </div>
               </form>
             </>
@@ -56,6 +57,7 @@ const ProductCard = props => {
 
         </div>
       </div>
+      </>
     )
 }
 

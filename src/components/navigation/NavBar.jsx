@@ -44,7 +44,7 @@ function NavBar() {
                     </div>
                     <p className="text-lg">
                     ${cart.getTotalCost().toFixed(2)}
-                    <span className="text-sm text-gray-500"> {productsCount}</span>
+                    <span className="text-sm text-gray-500"> ({productsCount})</span>
                     </p>
             </button>
             </div>
@@ -52,34 +52,36 @@ function NavBar() {
             </div>
         </nav>
         
-        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto font-serif"
+        <div className="modal fade fixed top-0 left-0 hidden shadow-lg w-full h-full outline-none overflow-x-hidden overflow-y-auto"
   id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog relative w-auto pointer-events-none">
+  <div className="modal-dialog relative w-auto pointer-events-none">
     <div
-      class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+      className="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
       <div
-        class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">
+        className="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+        <h5 className="text-3xl font-medium leading-normal text-gray-800 font-serif" id="exampleModalLabel">
           Shopping Cart
         </h5>
         <button type="button"
-          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+          className="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
           data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body relative p-4">
+      <div className="modal-body relative p-4">
       {productsCount > 0 ?
                         <>
-                            <p>Items in your cart:</p>
+                            <p className="text-2xl mb-8"><span className="font-serif">Total items:</span> {productsCount}</p>
                             {cart.items.map( (currentProduct, idx) => (
                                   <CartProduct key={idx} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                             ))}
-
-                            <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
-
-                            <button className="border" onClick={checkout} >
-                                Purchase items!
-                            </button>
+                            <div className="float-right">
+                            <h1 className="p-4"><span className="font-serif">Total:</span> ${cart.getTotalCost().toFixed(2)} CAD</h1>
+                            <div className="mb-2">
+                                <div className="mr-1">
+                                <button className="py-2 mr-1 px-5 block w-full font-medium text-center text-zinc-600 rounded-lg bg-rose-200 border border-rose-200 hover:bg-rose-400 focus:ring-4 focus:outline-none focus:ring-rose-300 hover:text-white ease-in-out duration-300 font-serif" onClick={checkout} >Purchase items!</button>
+                                </div>
+                            </div>
+                            </div>
                         </>
                     :
                         <>
@@ -93,9 +95,6 @@ function NavBar() {
                         </>
                         
                     }
-      </div>
-      <div
-        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-gray-200 rounded-b-md">
       </div>
     </div>
   </div>
